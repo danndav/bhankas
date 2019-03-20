@@ -28,6 +28,24 @@ ul {
     font-weight: bold;
 }
 
+.landingBtn {
+    width: 25%;
+    background: #fff;
+    color: #1f769d;
+    padding: 14px 40px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+    border: 2px solid transparent;
+}
+.landingBtn:hover {
+    background: whitesmoke;
+    color: #1f769d;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
 
 
 /* Header **/
@@ -69,17 +87,64 @@ nav .display {
 header #trackerText {
     font-size: 30px;
 }
-header #highlighter {
-    color: #f65383;
-    font-weight: bold;
-    font-size: 30px;
-}
-#highlighter {
-    color: #f65383;
-    font-weight: bold;
-}
+
 header a:hover {
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
+
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-content: center
+  }
+  
+  .flex-item {
+    flex: 1;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    align-self: center;
+    color: #196282;
+    font-size: 30px;
+  }
+
+
+
+/* Boxes */
+#boxes {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+}
+#boxes .box {
+    float: left;
+    text-align: center;
+    width: 30%;
+    padding: 10px;
+}
+#boxes .box img {
+    width: 150px;
+    height: 150px;
+}
+
+#boxes h1{
+    color:#196282;
+}
+
+footer {
+    clear: both;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 3em;
+    padding: 1px;
+    color: #ffffff;
+    background-color: #196282;
+    text-align: center;
+    margin: 0 !important;
+}
+

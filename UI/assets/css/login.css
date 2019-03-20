@@ -6,7 +6,7 @@
 input[type="text"],
 input[type="password"],
 input[type="email"],
-select {
+select, option{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -50,4 +50,9 @@ input[type="submit"]:hover {
 #linkup {
     text-decoration: none;
     color: #196282;
+}
+.labeltitle{
+    color: #196282;
+    font-weight: bold;
+    display: block;
 }

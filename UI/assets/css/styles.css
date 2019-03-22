@@ -203,19 +203,32 @@ tr:hover {
     margin-top: 20px;
     color: rgb(241, 122, 158);
 }
-.processing {
-    color: orange;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 16px;
-}
 
-.allparcels {
+
+.admincal {
     color: rgb(25, 98, 130);
     font-weight: bold;
     text-align: center;
     padding-top: 16px;
 }
+.showDetails,
+.deleteAccount {
+border-radius: 5px
+}
+.select-button {
+    width: 120px;
+    padding: 5px;
+    margin: 0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+  
+  .showDetails:hover {
+    cursor: pointer;
+    background: #196282;
+    color: white
+  }
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -234,6 +247,14 @@ td {
     text-align: left;
     padding: 8px;
     border-bottom: 2px solid grey;
+}
+#one,#two,#four,#five,#seven{
+    color:green;
+    font-weight: bold;
+}
+#three,#eight,#six{
+    color:red;
+    font-weight: bold;
 }
 .alignleft {
     float: left;

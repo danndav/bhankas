@@ -1,5 +1,4 @@
 
-
 function getStatus(element) {
     switch (element) {
         case "one":

@@ -229,6 +229,17 @@ border-radius: 5px
     background: #196282;
     color: white
   }
+
+  .alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+    padding-right: 30px;
+}
+#textbox {
+    clear: both;
+}
 table {
     border-collapse: collapse;
     border-spacing: 0;

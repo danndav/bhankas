@@ -45,7 +45,19 @@ input[type="submit"]:hover {
     margin:auto;
     font-size: 30px;
     padding: 14px;
-    margin-top: 25px
+    margin-top: 30px
+}
+
+#credit {
+    margin-bottom: 100px;
+}
+#credit h2{
+    text-align: center;
+    margin:auto;
+    font-size: 30px;
+    padding: 14px;
+    margin-top: 25px;
+    margin-bottom: -20px;
 }
 #linkup {
     text-decoration: none;

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Banka</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="banking application that powers banking operations">
+    <meta name="author" content="David Imodoye Daniel">
+    <link rel="stylesheet"  href="assets/css/styles.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>
+                    <a href="index.html">
+                        <span >BANKA</span>
+                    </a>
+                </h1>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="current" href="#">Admin</a>
+                    </li>
+                    <li>
+                        <a href="addadmin.html"> Add Admin + </a>
+                    </li>
+                    <li>
+                        <a href="index.html">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="login-bar">
+        <div class="dashboard-login">
+            <br>
+            <h1 class="text-center">Welcome Admin</h1>
+            <div class="dashboard">
+                <div class="col-container">
+                     <div class="col white-bg">
+                        <img src="assets/img/profile.jpg" alt="">
+                        
+                    </div>
+                     <div class="col white-bg">
+                        <p class="admincal">Total Account</p>
+                        <h1 class="admincal">2000</h1>
+                    </div>
+                    
+                    <div class="col white-bg">
+                        <p class="admincal">account Activated</p>
+                        <h1 class="admincal">1500</h1>
+                    </div>
+
+                    <div class="col white-bg">
+                        <p class="admincal">Total Transaction</p>
+                        <h1 class="admincal">200,000,000</h1>
+                    </div>
+
+                   
+                </div>
+
+                <br>
+                <div id="textbox">
+                    <h2 class="alignleft">
+                        Users Account
+                    </h2>
+                   
+                </div>
+                <div id="clearAlignment"></div>
+                <div id="tableContainer">
+                    <table>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Account Name</th>
+                            <th>Account Number</th>
+                            <th>Credit/Debit</th>
+                            <th>View Account Details</th>
+                            <th>Delete Account</th>
+                            <th>Status</th>
+                            <th>Change Status </th>
+                        </tr>
+
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>David Imodoye Daniel</td>
+                            <td>0140012345</td>  
+                            <td><a href="creditdebit.html"><button class="showDetails select-button">Credit/Debit </button></a></td>
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td><a ><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td id="one">Activated</td>
+                            <td>
+                                <select class="select-button" id="statusOne" onChange="getStatus('one')">
+                                    <option value="">Select Status</option>
+                                    <option value="activate">Activate</option>
+                                    <option value="deactivate">Deactivate</option>
+                                    
+                                </select>
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td>&nbsp;</td>
+                            <td>David Imodoye Daniel</td>
+                            <td>0140012345</td>  
+                            <td><a href="creditdebit.html"><button class="showDetails select-button">Credit/Debit </button></a></td>
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td><a href=""><button class="DeleteAccount select-button">Delete Account</button></a></td>
+                            <td id="two" >Activated</td>
+                            <td>
+                                <select class="select-button status" id="statusTwo" onChange="getStatus('two')">
+                                    <option value="">Select Status</option>
+                                    <option value="activate">Activate</option>
+                                    <option value="deactivate">Deactivate</option>
+                                    
+                                </select>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>David Imodoye Daniel</td>
+                            <td>0140012345</td>  
+                            <td><a href="creditdebit.html"><button class="showDetails select-button">Credit/Debit </button></a></td>
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td id="three">Deactivated</td>
+                            <td>
+                                <select class="select-button" id="statusThree" onChange="getStatus('one')">
+                                    <option value="">Select Status</option>
+                                    <option value="activate">Activate</option>
+                                    <option value="deactivate">Deactivate</option>
+                                    
+                                </select>
+                            </td>
+                        </tr>
+
+
+                         <tr>
+                            <td>&nbsp;</td>
+                            <td>David Imodoye Daniel</td>
+                            <td>0140012345</td>  
+                            <td><a href="creditdebit.html"><button class="showDetails select-button">Credit/Debit </button></a></td>
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td id="four">Activated</td>
+                            <td>
+                                <select class="select-button" id="statusFour" onChange="getStatus('one')">
+                                    <option value="">Select Status</option>
+                                    <option value="Activate">Activate</option>
+                                    <option value="deactivate">Deactivate</option>
+                                    
+                                </select>
+                            </td>
+                        </tr>
+
+
+                         <tr>
+                            <td>&nbsp;</td>
+                            <td>David Imodoye Daniel</td>
+                            <td>0140012345</td>  
+                            <td><a href="creditdebit.html"><button class="showDetails select-button">Credit/Debit </button></a></td>
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td id="five">Activated</td>
+                            <td>
+                                <select class="select-button" id="statusFive" onChange="getStatus('one')">
+                                    <option value="">Select Status</option>
+                                    <option value="activate">Activate</option>
+                                    <option value="deactivate">Deactivate</option>
+                                    
+                                </select>
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td>&nbsp;</td>
+                            <td>David Imodoye Daniel</td>
+                            <td>0140012345</td>  
+                            <td><a href="creditdebit.html"><button class="showDetails select-button">Credit/Debit </button></a></td>
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td id="six">Deactivated</td>
+                            <td>
+                                <select class="select-button" id="statusSix" onChange="getStatus('one')">
+                                    <option value="">Select Status</option>
+                                    <option value="activate">Activate</option>
+                                    <option value="deactivate">Deactivate</option>
+                                    
+                                </select>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>&nbsp;</td>
+                            <td>David Imodoye Daniel</td>
+                            <td>0140012345</td>  
+                            <td><a href="creditdebit.html"><button class="showDetails select-button">Credit/Debit </button></a></td>
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td id="seven">Activated</td>
+                            <td>
+                                <select class="select-button" id="statusSeven" onChange="getStatus('one')">
+                                    <option value="">Select Status</option>
+                                    <option value="activate">Activate</option>
+                                    <option value="deactivate">Deactivate</option>
+                                    
+                                </select>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>&nbsp;</td>
+                            <td>David Imodoye Daniel</td>
+                            <td>0140012345</td>  
+                            <td><a href="creditdebit.html"><button class="showDetails select-button">Credit/Debit </button></a></td>
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td id="eight">Deactivated</td>
+                            <td>
+                                <select class="select-button" id="statusEight" onChange="getStatus('one')">
+                                    <option value="">Select Status</option>
+                                    <option value="activate">Activate</option>
+                                    <option value="deactivate">Deactivate</option>
+                                    
+                                </select>
+                            </td>
+                        </tr>
+
+
+
+
+                    </table>
+                </div>
+            </div>
+            <br><br><br><br>
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            <span id="trackerText">Banka</span></span>
+            , Copyright &copy; 2019</p>
+    </footer>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

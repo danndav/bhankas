@@ -21,23 +21,27 @@
             <nav>
                 <ul>
                     <li>
-                        <a class="current" href="index.html">Home</a>
+                        <a  href="admin.html">Admin</a>
                     </li>
                     <li>
-                        <a href="login.html">User Login</a>
+                        <a  class="current" href="addadmin.html"> Add Admin + </a>
                     </li>
                     <li>
-                        <a href="stafflogin.html">Staff Login</a>
+                        <a href="adminlogin.html">Logout</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
     <section id="login">
-        <h2>Admin Login</h2>
+        <h2>Create New Admin or Staff</h2>
         <form action="admin.html" class="form-div">
             <label for="fname">username</label>
             <input type="text" id="username" placeholder="your username..." /> <br>
+            <label for="fname">email</label>
+            <input type="text" id="username" placeholder="your username..." /> <br>
+            <label for="fname">phone number</label>
+            <input type="text" id="username" placeholder="Admin or Staff" /> <br>
             <label for="password">password</label>
             <input type="password" id="password" placeholder="your password ..."> <br>
             <input type="submit" value="sign in">

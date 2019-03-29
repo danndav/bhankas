@@ -4,10 +4,9 @@
     margin: 0;
 }
 
-html {
-    min-height: 100%;
-}
+
 body {
+    min-height: 100%;
     position: relative;
     padding: 0;
     margin: 0;
@@ -82,7 +81,7 @@ header a:hover {
 
 
 #backgroundImg {
-    min-height: 80vh;
+    min-height: 90vh;
     background: url("../img/backgroundimg.jpg") no-repeat 0;
     background-size: cover;
     text-align: center;
@@ -312,15 +311,10 @@ section > #admin-bar,
 
 
 footer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    height: 3em;
-    padding: 1px;
+    padding: 20px 0px 20px 0px;
     color: #ffffff;
     background-color: #196282;
     text-align: center;
-    margin: 0 !important;
+    margin: 0 auto !important;
 }
 

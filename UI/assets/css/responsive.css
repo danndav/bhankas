@@ -1,0 +1,234 @@
+/* Media Queries */
+@media(max-width: 768px) {
+    footer {
+        margin-top: 150px !important;
+    }
+    .yesBtn {
+        margin-left: 0px !important;
+    }
+    .form-div {
+        margin: auto;
+        width: 55%;
+        font-size: 15px;
+        border: 1px solid #eee;
+        padding: 14px;
+        border-radius: 10px;
+        margin-top: 30px
+    }
+   
+    .whitee-login {
+        height: 634px;
+    }
+    .detailContainer {
+        width: 94%;
+    }
+    header #branding,
+    header nav,
+    header nav li,
+    
+    section#sidebar {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    header {
+        padding-bottom: 20px;
+    }
+    .container > h1#title {
+        padding-top: 71px;
+    }
+    #backgroundImg h1 {
+        margin-top: 0px;
+    }
+    .userform button {
+        display: block;
+        width: 100%;
+    }
+    .userform input,
+    textarea,
+    select {
+        width: 65%;
+        padding: 12px;
+        margin: 7px 71px;
+        text-align: center;
+        display: inline-block;
+        border: 1px solid grey;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 18px;
+    }
+    #buttonSubmit,
+    #signupSubmit,
+     {
+        width: 54%;
+        background: #196282;
+        color: #ffffff;
+        padding: 14px 40px;
+        border-radius: 10px;
+        font-size: 18px;
+        margin: 31px 90px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .landingBtn {
+        text-align: center;
+        width: 230px;
+    }
+    .userform {
+        width: 100%;
+    }
+    
+    #admin-details {
+        width: 100%;
+        height: 100px;
+        margin: 0 auto;
+    }
+    .white-login {
+        padding: 15px;
+        background: #fff;
+        color: #ffffff;
+        margin-bottom: 0px;
+        height: 600px;
+        margin: 0;
+    }
+    .detailContainer {
+        width: 94%;
+    }
+}
+@media only screen and (max-width: 347px) {
+
+}
+@media only screen and (min-width: 760px) and (max-width: 900px) {
+    
+    .flex-container > div {
+        width: 225px;
+        height: 210px;
+        margin: 15px;
+        color: white;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+    }
+}
+@media only screen and (min-width:1024px) and (max-width:1366px) {
+    
+    #buttonSubmit,
+    #signupSubmit,
+    {
+        width: 45%;
+        background: #196282;
+        color: #ffffff;
+        padding: 12px 40px;
+        border-radius: 10px;
+        font-size: 18px;
+        margin: 31px 136px;
+    }
+    .flex-container > div {
+        width: 420px;
+        height: 230px;
+        margin: 15px;
+        color: white;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width:1297px) {
+    .flex-container > div {
+        width: 402px;
+        height: 230px;
+        margin: 15px;
+        color: white;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .col-container {
+        display: block;
+        width: 100%;
+    }
+}
+@media only screen and (min-width:600px) and (max-width:860px) {
+    .userform {
+        width: 70%;
+        margin: -30px auto;
+        border: 1px solid grey;
+    }
+    .whitee-login {
+        height: 760px;
+    }
+    .detailContainer {
+        width: 94%;
+    }
+}
+@media only screen and (min-width:320px) and (max-width:480px) {
+    .form-div {
+        margin: auto;
+        width: 70%;
+        font-size: 15px;
+        border: 1px solid #eee;
+        padding: 14px;
+        border-radius: 10px;
+        margin-top: 30px
+    }
+    .userform input,
+    textarea,
+    select {
+        width: 65%;
+        padding: 12px;
+        margin: 7px 52px;
+        text-align: center;
+        display: inline-block;
+        border: 1px solid grey;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 18px;
+    }
+   
+    #buttonSubmit,
+    #signupSubmit,
+    {
+        width: 54%;
+        background: #196282;
+        color: #ffffff;
+        padding: 14px 40px;
+        border-radius: 10px;
+        font-size: 18px;
+        margin: 31px 67px;
+    }
+    .whitee-login {
+        height: 760px;
+    }
+    .detailContainer {
+        width: 94%;
+    }
+}
+@media only screen and (min-width:800px) and (max-width:1200px) {
+    .userform input,
+    textarea,
+    select {
+        width: 61%;
+        padding: 10px;
+        margin: 8px 106px;
+        text-align: center;
+        display: inline-block;
+        border: 1px solid grey;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 18px;
+    }
+    #buttonSubmit {
+        margin: 31px 153px;
+    }
+    .form-div {
+        margin: auto;
+        width: 45%;
+        font-size: 15px;
+        border: 1px solid #eee;
+        padding: 14px;
+        border-radius: 10px;
+        margin-top: 30px
+    }
+}

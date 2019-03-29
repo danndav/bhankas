@@ -3,12 +3,15 @@
     footer {
         margin-top: 150px !important;
     }
-    .yesBtn {
-        margin-left: 0px !important;
+
+    .dashboard {
+        margin: 25px 50px 0 50px;
+        height: auto;
     }
+   
     .form-div {
         margin: auto;
-        width: 55%;
+        width: 100%;
         font-size: 15px;
         border: 1px solid #eee;
         padding: 14px;

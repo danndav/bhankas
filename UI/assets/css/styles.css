@@ -11,13 +11,13 @@ body {
     position: relative;
     padding: 0;
     margin: 0;
+    background-color: #f4f4f4;
 }
 
 /* Global */
 .container {
     width: 80%;
     margin: 0 auto;
-    overflow: hidden;
     padding: 10px;
 }
 .text-center {
@@ -31,6 +31,74 @@ ul {
     padding: 0;
     font-weight: bold;
 }
+
+
+/* Header **/
+header {
+    background: #196282;
+    color: #ffffff;
+    padding-top: 25px;
+    min-height: 70px;
+    border-bottom: #fff 3px solid;
+}
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+header li {
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+header #branding {
+    float: left;
+}
+header #branding h1 {
+    margin-top: -8px;
+}
+header nav {
+    float: right;
+    margin-top: 4px;
+    /* font-size: 20px */
+}
+header #highlight,
+nav .current {
+    color: #f65383;
+    font-weight: bold;
+}
+nav .display {
+    display: none
+}
+header #trackerText {
+    font-size: 30px;
+}
+
+header a:hover {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+#backgroundImg {
+    min-height: 80vh;
+    background: url("../img/backgroundimg.jpg") no-repeat 0;
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+}
+#backgroundImg h1 {
+    margin-top: 80px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+#backgroundImg p {
+    font-size: 20px;
+    padding: 15px;
+}
+
+
 #buttonSubmit {
     width: 45%;
     background: #196282;
@@ -69,7 +137,7 @@ ul {
 
 
 .landingBtn {
-    width: 25%;
+    width: 30%;
     background: #fff;
     color: #1f769d;
     padding: 14px 40px;
@@ -124,58 +192,6 @@ ul {
     height: 530px;
     margin: 0;
 }
-.dark-admin-details {
-    padding: 15px;
-    background: #35424a;
-    color: #ffffff;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    height: 800px;
-}
-.dark-user {
-    padding: 15px;
-    background: #35424a;
-    color: #ffffff;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-.dark-admin {
-    padding: 15px;
-    background: #35424a;
-    color: #ffffff;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    border-top: 3px solid #ba7e0f;
-    height: 740px;
-}
-
-/* Table CSS */
-table {
-    border-collapse: collapse;
-    width: 50%;
-    margin: 0 auto;
-}
-th,
-td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 2px solid #ba7e0f;
-}
-tr:hover {
-    background-color: white;
-    cursor: pointer
-}
-
-
-.flex-user-container > div {
-    background-color: #ba7e0f;
-    width: 100%;
-    height: 240px;
-    color: white;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
-}
 .col-container {
     display: flex;
     width: 100%;
@@ -203,10 +219,6 @@ tr:hover {
     
 }
 
-#welcome {
-    margin-top: 20px;
-    color: rgb(241, 122, 158);
-}
 
 
 .admincal {
@@ -263,6 +275,7 @@ td {
     padding: 8px;
     border-bottom: 2px solid grey;
 }
+
 #one,#two,#four,#five,#seven{
     color:green;
     font-weight: bold;
@@ -282,104 +295,23 @@ td {
     clear: both;
 }
 
-/* Header **/
-header {
-    background: #196282;
-    color: #ffffff;
-    padding-top: 25px;
-    min-height: 70px;
-    border-bottom: #fff 3px solid;
-}
-header a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-}
-header li {
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-header #branding {
-    float: left;
-}
-header #branding h1 {
-    margin-top: -8px;
-}
-header nav {
-    float: right;
-    margin-top: 4px;
-    /* font-size: 20px */
-}
-header #highlight,
-nav .current {
-    color: #f65383;
-    font-weight: bold;
-}
-nav .display {
-    display: none
-}
-header #trackerText {
-    font-size: 30px;
-}
-
-header a:hover {
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
 
 
 
-#backgroundImg {
-    min-height: 100vh;
-    background: url("../img/backgroundimg.jpg") no-repeat 0;
-    background-size: cover;
-    text-align: center;
-    color: #ffffff;
-}
-#backgroundImg h1 {
-    margin-top: 80px;
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-#backgroundImg p {
-    font-size: 20px;
-    padding: 15px;
-}
-
-
-
-/* Sidebar */
-section#request-bar {
-    width: 100%;
-}
-section#right-sidebar {
-    width: 50%;
-    float: right;
-}
 section > #admin-bar,
 #login-bar,
-#signup-bar {
+#signup-bar
+#dashboard-bar {
     width: 100%;
 }
 #settingsImage {
     width: 50%;
     margin: 0 auto;
 }
-.userform {
-    width: 37%;
-    margin: 0px auto;
-    border: 1px solid grey;
-}
-#quoteTitle {
-    text-align: center;
-    margin-left: -21px;
-    color: #f65383;
-}
+
 
 
 footer {
-    clear: both;
     position: absolute;
     left: 0;
     right: 0;

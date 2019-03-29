@@ -62,6 +62,12 @@ input[type="submit"]:hover {
 #linkup {
     text-decoration: none;
     color: #196282;
+    padding-right:16px;
+}
+
+#linkuppass {
+    text-decoration: none;
+    color: #196282;
 }
 .labeltitle{
     color: #196282;

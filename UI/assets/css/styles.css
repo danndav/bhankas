@@ -193,6 +193,7 @@ header a:hover {
 }
 .col-container {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
 }
 .col {
@@ -255,6 +256,13 @@ border-radius: 5px
 #textbox {
     clear: both;
 }
+
+
+#tableContainer {
+    overflow-x: auto;
+}
+
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -274,7 +282,6 @@ td {
     padding: 8px;
     border-bottom: 2px solid grey;
 }
-
 #one,#two,#four,#five,#seven{
     color:green;
     font-weight: bold;
@@ -290,11 +297,6 @@ td {
     float: right;
     padding-right: 30px;
 }
-#textbox {
-    clear: both;
-}
-
-
 
 
 section > #admin-bar,

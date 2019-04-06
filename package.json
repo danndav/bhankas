@@ -4,8 +4,9 @@
   "description": "Banka is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals",
   "main": "app.js",
   "scripts": {
-    "start": "babel-node ./app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./server/app.js --watch server --exec babel-node",
+    "test": "./node_modules/mocha/bin/mocha",
+    "lint:dev": "eslint \"server/**/*.js\" app.js --fix || true"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.3",
+    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
@@ -34,6 +36,9 @@
     "nodemon": "^1.18.10"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.3"
+    "@babel/polyfill": "^7.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
   }
 }

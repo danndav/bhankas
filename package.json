@@ -9,8 +9,8 @@
     "test": "nyc --reporter=html --reporter=text mocha --require @babel/polyfill --require @babel/register --timeout 5000 ./server/tests/*.js --exit",
     "lint": " eslint  ./server/**/*.js  --fix || true",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "cover": "istanbul cover _mocha"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+   
   },
   "repository": {
     "type": "git",

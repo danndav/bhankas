@@ -52,21 +52,26 @@ describe("UNIT TESTS FOR DUMMY USER CONTROLLERS", () => {
   });
 
   describe("/POST REQUEST", () => {
-    it("it should login user ", done => {
+    it("it should signin user ", done => {
       chai
         .request(server)
-        .post("/api/v1/auth/login")
+        .post("/api/v1/auth/signin")
         .send({
           email: "tolaniabass@gmail.com",
-          password: "tolaniabass"
+          password: "tolaniabass",
         })
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.have.property("status").to.equals(200);
           res.body.should.have.property("data").to.be.an("object");
+          res.body.should.have
+            .property("message")
+            .to.equals("Authentication Successful");
+
           done();
         });
     });
+
     it("it should not login unregistered user ", done => {
       chai
         .request(server)

@@ -15,12 +15,6 @@ class DummyControllerTransaction {
      * @return {json} res.json
      */
     static getAllTransactions(req, res) {
-        if (!transactionStore) {
-            res.status(404).json({
-                status: 404,
-                error: 'Accounts Empty',
-            });
-        }
         res.status(200).json({
             message: "Successfully fetched all Transactions",
             status: 200,
@@ -62,8 +56,8 @@ class DummyControllerTransaction {
             return res.status(201).json({
                 status: 201,
                 data: {
-                    ...transactionAdded,
-                },
+                    ...transactionAdded
+                }
             });
         }
         return res.status(404).json({
@@ -94,8 +88,8 @@ class DummyControllerTransaction {
 
             const oldBalance = existingAccount.balance;
             if (amount > oldBalance) {
-                return res.status(404).json({
-                    status: 404,
+                return res.status(400).json({
+                    status: 400,
                     error: 'insufficent account balance',
                 });
             }
@@ -118,8 +112,8 @@ class DummyControllerTransaction {
                 },
             });
         }
-        return res.status(404).json({
-            status: 404,
+        return res.status(400).json({
+            status: 400,
             error: 'This account  does not exist',
         });
     }

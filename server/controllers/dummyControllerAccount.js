@@ -14,15 +14,10 @@ class DummyControllerAcccount {
    * @return {json} res.json
    */
   static getAllAccounts(req, res) {
-    if (!accountStore) {
-      res.status(404).json({
-        status: 404,
-        message: 'Accounts Empty',
-      });
-    }
     res.status(200).json({
       status: 200,
       data: accountStore,
+      message: "Successfully fetched all accounts",
     });
   }
 
@@ -65,6 +60,7 @@ class DummyControllerAcccount {
         type: usersAccount.type,
         openingBalance: usersAccount.balance,
       },
+      message: "Account created successfully"
     });
   }
 
@@ -94,6 +90,7 @@ class DummyControllerAcccount {
           accountNumber,
           status,
         },
+        message: "account status changed  successfull"
       });
     }
     return res.status(404).json({
@@ -126,8 +123,8 @@ class DummyControllerAcccount {
 
       });
     }
-    return res.status(404).json({
-      status: 404,
+    return res.status(400).json({
+      status: 400,
       message: 'This account  does not exist',
     });
   }

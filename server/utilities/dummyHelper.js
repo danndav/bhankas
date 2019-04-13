@@ -17,7 +17,11 @@ class helperClass {
    */
 
   static hashPassword(password) {
-    return bcrypt.hash(password, 10);
+
+    const hash = bcrypt.hashSync(password, 10);
+  
+    return hash;
+
   }
 
 
@@ -25,11 +29,13 @@ class helperClass {
    * Userhelper Class
    * @staticmethod compare
    * @param  {array} dataStore
-   * @param {string} password
+   * @param {string} passwordcompare
    * @return {string} comparedpassword
    */
   static compare(password, hashedpassword) {
-    return bcrypt.compare(password, hashedpassword);
+
+   return bcrypt.compareSync(password, hashedpassword); // true
+
   }
 
   /**

@@ -39,40 +39,6 @@ const user = [
         }
     ]
 
-    // account: [
-    //     {
-    //         id: 1,
-    //         accountNumber: 123456789,
-    //         createdOn: 'Friday, 6th April 2019',
-    //         owner: 1,
-    //         type: 'savings',
-    //         status: 'active',
-    //         balance:5000
-
-    //     }, {
-    //         id: 2,
-    //         accountNumber: 987654321,
-    //         createdOn: 'Friday, 1st Yanuary 2019',
-    //         owner: 2,
-    //         type: 'current',
-    //         status: 'dormant',
-    //         balance:20000
-            
-    //     }
-    // ],
-
-    // transaction: [
-    //     {
-    //         id: 1,
-    //         createdOn: 'Friday, 1st Yanuary 2019',
-    //         type: 'credit',
-    //         accountNumber: 12345678,
-    //         cashier: '',
-    //         amount: 10000,
-    //         oldbalance: 20000,
-    //         newBalance:10000
-    //     }
-    // ]
 
 
 export default user;

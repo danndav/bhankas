@@ -52,7 +52,11 @@ class DummyControllerUser {
       });
     }
 
-    const passwordhashed = await helperClass.hashPassword(password);
+   
+    const passwordhashed = await helperClass.hashPassword(password); 
+   
+    // const passwordhashed = helperClass.hashPassword(password); 
+    
     const users = {
       id: dataStore.length + 1,
       email,
@@ -101,37 +105,50 @@ class DummyControllerUser {
       email: userEmail,
       password: userPassword,
     } = req.body;
-    const userChecked = dataStore.find(user => user.email === userEmail && helperClass.compare(userPassword, user.password));
+    const userChecked = dataStore.find(user => user.email === userEmail);
     if (userChecked) {
+      console.log(userChecked)
       const {
         email,
         type,
         firstName,
         lastName,
         id,
+        password
       } = userChecked;
-      const token = await helperClass.generateToken({
-        id,
-        email,
-        type,
-      });
-      return res.header('x-access-token', token).status(200).json({
 
-        status: 200,
-        data: {
-          token,
+
+
+      const foundUserPassword = helperClass.compare(userPassword, password);
+
+      if (foundUserPassword) {
+        const token = await helperClass.generateToken({
           id,
-          firstName,
-          lastName,
           email,
           type,
-        },
-        message: 'Authentication Successful',
+        });
+        return res.header('x-access-token', token).status(200).json({
+          status: 200,
+          data: {
+            token,
+            id,
+            firstName,
+            lastName,
+            email,
+            type,
+          },
+          message: 'Authentication Successful',
+        });
+      }
+      return res.status(400).json({
+        status: 404,
+        error: 'please type in the correct Password ',
       });
+
     }
     return res.status(400).json({
       status: 404,
-      error: 'please input the correct Username or Password ',
+      error: 'please input the correct email',
     });
   }
 }

@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./server/app.js --watch server --exec babel-node",
+    "test-dev": "nyc --require @babel/register ---reporter=html --reporter=text mocha./server/tests/*.js --timeout 20000 --watch --exit",
     "test": "nyc --reporter=html --reporter=text mocha --require @babel/polyfill --require @babel/register --timeout 5000 ./server/tests/*.js --exit",
-    "lint": " eslint  ./server/**/*.js  --fix || true"
+    "lint": " eslint  ./server/**/*.js  --fix || true",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "cover": "istanbul cover _mocha"
   },
   "repository": {
     "type": "git",
@@ -30,6 +34,7 @@
     "@babel/register": "^7.4.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "coveralls": "^3.0.3",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
@@ -42,6 +47,7 @@
     "@babel/polyfill": "^7.4.3",
     "bcrypt": "^3.0.5",
     "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",

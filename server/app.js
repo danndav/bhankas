@@ -2,6 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
 import apiVersion1 from './versioning/v1';
+import dotenv from 'dotenv'
+dotenv.config()
 
 
 const app = express();

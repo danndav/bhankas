@@ -17,7 +17,7 @@ class DummyControllerAcccount {
     res.status(200).json({
       status: 200,
       data: accountStore,
-      message: "Successfully fetched all accounts",
+      message: 'Successfully fetched all accounts',
     });
   }
 
@@ -60,7 +60,7 @@ class DummyControllerAcccount {
         type: usersAccount.type,
         openingBalance: usersAccount.balance,
       },
-      message: "Account created successfully"
+      message: 'Account created successfully',
     });
   }
 
@@ -90,7 +90,7 @@ class DummyControllerAcccount {
           accountNumber,
           status,
         },
-        message: "account status changed  successfull"
+        message: 'account status changed  successfull',
       });
     }
     return res.status(404).json({

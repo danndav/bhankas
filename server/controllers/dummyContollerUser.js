@@ -52,11 +52,11 @@ class DummyControllerUser {
       });
     }
 
-   
-    const passwordhashed = await helperClass.hashPassword(password); 
-   
-    // const passwordhashed = helperClass.hashPassword(password); 
-    
+
+    const passwordhashed = await helperClass.hashPassword(password);
+
+    // const passwordhashed = helperClass.hashPassword(password);
+
     const users = {
       id: dataStore.length + 1,
       email,
@@ -107,16 +107,15 @@ class DummyControllerUser {
     } = req.body;
     const userChecked = dataStore.find(user => user.email === userEmail);
     if (userChecked) {
-      console.log(userChecked)
+      console.log(userChecked);
       const {
         email,
         type,
         firstName,
         lastName,
         id,
-        password
+        password,
       } = userChecked;
-
 
 
       const foundUserPassword = helperClass.compare(userPassword, password);
@@ -144,7 +143,6 @@ class DummyControllerUser {
         status: 404,
         error: 'please type in the correct Password ',
       });
-
     }
     return res.status(400).json({
       status: 404,

@@ -7,6 +7,7 @@ Bhanka is a light-weight core banking application that powers banking operations
 ## Access running application
 
 - [UI](https://danndav.github.io/bhankas/UI/)
+- [HEROKU](https://bhanka.herokuapp.com/api/v1)
 - [Pivotal Tracker board](https://www.pivotaltracker.com/n/projects/2320360)
 
 ## Features

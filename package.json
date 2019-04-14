@@ -2,16 +2,18 @@
   "name": "banka",
   "version": "1.0.0",
   "description": "Bhanka is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "babel-node  server/app.js",
+    "start": "npm run build && node ./build/app.js",
     "start-dev": "nodemon ./server/app.js --watch server --exec babel-node",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./server -s",
+    "build": "npm run clean && npm run build-babel",
     "test-dev": "nyc --require @babel/register ---reporter=html --reporter=text mocha./server/tests/*.js --timeout 20000 --watch --exit",
     "test": "nyc --reporter=html --reporter=text mocha --require @babel/polyfill --require @babel/register --timeout 5000 ./server/tests/*.js --exit",
     "lint": " eslint  ./server/**/*.js  --fix || true",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test"
-
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.4.0",
     "chai": "^4.2.0",
@@ -45,7 +48,6 @@
     "nyc": "^13.3.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.3",
     "bcrypt": "^3.0.5",
     "body-parser": "^1.18.3",
     "dotenv": "^7.0.0",

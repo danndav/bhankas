@@ -32,7 +32,7 @@ class DummyControllerUser {
    * @return {json} res.json
    */
 
-  static async userSignup(req, res) {
+  static userSignup(req, res) {
     const {
       firstName,
       lastName,
@@ -53,7 +53,7 @@ class DummyControllerUser {
     }
 
 
-    const passwordhashed = await helperClass.hashPassword(password);
+    const passwordhashed =  helperClass.hashPassword(password);
 
     // const passwordhashed = helperClass.hashPassword(password);
 
@@ -71,7 +71,7 @@ class DummyControllerUser {
     dataStore.push(users);
 
 
-    const token = await helperClass.generateToken({
+    const token = helperClass.generateToken({
       email,
       type,
     });
@@ -100,7 +100,7 @@ class DummyControllerUser {
    * @param {object} res - Response object
    * @return {json} res.json
    */
-  static async userLogin(req, res) {
+  static userLogin(req, res) {
     const {
       email: userEmail,
       password: userPassword,
@@ -121,7 +121,7 @@ class DummyControllerUser {
       const foundUserPassword = helperClass.compare(userPassword, password);
 
       if (foundUserPassword) {
-        const token = await helperClass.generateToken({
+        const token = helperClass.generateToken({
           id,
           email,
           type,

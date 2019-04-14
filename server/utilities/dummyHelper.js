@@ -1,7 +1,6 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-
 /**
  * @exports
  * @class helperClass
@@ -43,7 +42,7 @@ class helperClass {
    * @return {string}
    */
 
-  static async generateToken({
+  static  generateToken({
     email,
     type,
   }) {

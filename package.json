@@ -4,7 +4,8 @@
   "description": "Bhanka is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./server/app.js --watch server --exec babel-node",
+    "start": "babel-node ./server/app.js",
+    "start-dev": "nodemon ./server/app.js --watch server --exec babel-node",
     "test-dev": "nyc --require @babel/register ---reporter=html --reporter=text mocha./server/tests/*.js --timeout 20000 --watch --exit",
     "test": "nyc --reporter=html --reporter=text mocha --require @babel/polyfill --require @babel/register --timeout 5000 ./server/tests/*.js --exit",
     "lint": " eslint  ./server/**/*.js  --fix || true",

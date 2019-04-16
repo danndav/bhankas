@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="banking application that powers banking operations">
     <meta name="author" content="David Imodoye Daniel">
-    <link rel="stylesheet"  href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <script src="main.js"></script>
 </head>
@@ -19,7 +20,7 @@
             <div id="branding">
                 <h1>
                     <a href="index.html">
-                        <span >BANKA</span>
+                        <span id="logo">BANKA</span>
                     </a>
                 </h1>
             </div>
@@ -29,7 +30,7 @@
                         <a class="current" href="#">Admin</a>
                     </li>
                     <li>
-                        <a href="addadmin.html"> Add Admin + </a>
+                        <a href=""><label for="modal-5">Add Admin </label></a>
                     </li>
                     <li>
                         <a href="adminlogin.html">Logout</a>
@@ -45,15 +46,15 @@
             <h1 class="text-center">Welcome Admin</h1>
             <div class="dashboard">
                 <div class="col-container">
-                     <div class="col white-bg">
-                        <img src="assets/img/profile.jpg" alt="">
-                        
+                    <div class="col white-bg2">
+                        <img src="assets/img/avatar.png" alt="">
+
                     </div>
-                     <div class="col white-bg">
+                    <div class="col white-bg">
                         <p class="admincal">Total Account</p>
                         <h1 class="admincal">2000</h1>
                     </div>
-                    
+
                     <div class="col white-bg">
                         <p class="admincal">account Activated</p>
                         <h1 class="admincal">1500</h1>
@@ -64,7 +65,7 @@
                         <h1 class="admincal">200,000,000</h1>
                     </div>
 
-                   
+
                 </div>
 
                 <br>
@@ -72,13 +73,13 @@
                     <h2 class="alignleft">
                         Users Account
                     </h2>
-                   
+
                 </div>
                 <br>
                 <br>
                 <br>
                 <div id="tableContainer">
-                    
+
                     <table>
                         <tr>
                             <th>&nbsp;</th>
@@ -86,42 +87,44 @@
                             <th>Account Number</th>
                             <th>View Account Details</th>
                             <th>Delete Account</th>
-                            <th>Status</th>
+
                             <th>Change Status </th>
                         </tr>
 
                         <tr>
                             <td>&nbsp;</td>
                             <td>David Imodoye Daniel</td>
-                            <td>0140012345</td>  
-                            
-                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
-                            <td><a ><button class="showDetails select-button">Delete Account</button></a></td>
-                            <td id="one">Activated</td>
+                            <td>0140012345</td>
+
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
+                                    </button></a></td>
+                            <td><a><button class="showDetails select-button">Delete Account</button></a></td>
+
                             <td>
                                 <select class="select-button" id="statusOne" onChange="getStatus('one')">
-                                    <option value="">Select Status</option>
+
                                     <option value="activate">Activate</option>
                                     <option value="deactivate">Deactivate</option>
-                                    
+
                                 </select>
                             </td>
                         </tr>
 
-                         <tr>
+                        <tr>
                             <td>&nbsp;</td>
                             <td>David Imodoye Daniel</td>
-                            <td>0140012345</td>  
-                            
-                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td>0140012345</td>
+
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
+                                    </button></a></td>
                             <td><a href=""><button class="DeleteAccount select-button">Delete Account</button></a></td>
-                            <td id="two" >Activated</td>
+
                             <td>
                                 <select class="select-button status" id="statusTwo" onChange="getStatus('two')">
-                                    <option value="">Select Status</option>
+
                                     <option value="activate">Activate</option>
                                     <option value="deactivate">Deactivate</option>
-                                    
+
                                 </select>
                             </td>
                         </tr>
@@ -130,107 +133,114 @@
                         <tr>
                             <td>&nbsp;</td>
                             <td>David Imodoye Daniel</td>
-                            <td>0140012345</td>  
-                            
-                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td>0140012345</td>
+
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
+                                    </button></a></td>
                             <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
-                            <td id="three">Deactivated</td>
+
                             <td>
                                 <select class="select-button" id="statusThree" onChange="getStatus('one')">
-                                    <option value="">Select Status</option>
+
                                     <option value="activate">Activate</option>
                                     <option value="deactivate">Deactivate</option>
-                                    
+
                                 </select>
                             </td>
                         </tr>
 
 
-                         <tr>
+                        <tr>
                             <td>&nbsp;</td>
                             <td>David Imodoye Daniel</td>
-                            <td>0140012345</td>  
-                            
-                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td>0140012345</td>
+
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
+                                    </button></a></td>
                             <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
-                            <td id="four">Activated</td>
+
                             <td>
                                 <select class="select-button" id="statusFour" onChange="getStatus('one')">
-                                    <option value="">Select Status</option>
+
                                     <option value="Activate">Activate</option>
                                     <option value="deactivate">Deactivate</option>
-                                    
+
                                 </select>
                             </td>
                         </tr>
 
 
-                         <tr>
+                        <tr>
                             <td>&nbsp;</td>
                             <td>David Imodoye Daniel</td>
-                            <td>0140012345</td>  
-                            
-                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td>0140012345</td>
+
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
+                                    </button></a></td>
                             <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
-                            <td id="five">Activated</td>
+
                             <td>
                                 <select class="select-button" id="statusFive" onChange="getStatus('one')">
-                                    <option value="">Select Status</option>
+
                                     <option value="activate">Activate</option>
                                     <option value="deactivate">Deactivate</option>
-                                    
+
                                 </select>
                             </td>
                         </tr>
 
-                         <tr>
+                        <tr>
                             <td>&nbsp;</td>
                             <td>David Imodoye Daniel</td>
-                            <td>0140012345</td>  
-                            
-                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td>0140012345</td>
+
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
+                                    </button></a></td>
                             <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
-                            <td id="six">Deactivated</td>
+
                             <td>
                                 <select class="select-button" id="statusSix" onChange="getStatus('one')">
-                                    <option value="">Select Status</option>
+
                                     <option value="activate">Activate</option>
                                     <option value="deactivate">Deactivate</option>
-                                    
+
                                 </select>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>&nbsp;</td>
                             <td>David Imodoye Daniel</td>
-                            <td>0140012345</td>  
-                            
-                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td>0140012345</td>
+
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
+                                    </button></a></td>
                             <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
-                            <td id="seven">Activated</td>
+
                             <td>
                                 <select class="select-button" id="statusSeven" onChange="getStatus('one')">
-                                    <option value="">Select Status</option>
+
                                     <option value="activate">Activate</option>
                                     <option value="deactivate">Deactivate</option>
-                                    
+
                                 </select>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>&nbsp;</td>
                             <td>David Imodoye Daniel</td>
-                            <td>0140012345</td>  
-                            
-                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account </button></a></td>
+                            <td>0140012345</td>
+
+                            <td><a href="viewuseraccount.html"></a><button class="showDetails select-button">View
+                                    Account
+                                </button></a></td>
                             <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
-                            <td id="eight">Deactivated</td>
+
                             <td>
                                 <select class="select-button" id="statusEight" onChange="getStatus('one')">
-                                    <option value="">Select Status</option>
+
                                     <option value="activate">Activate</option>
                                     <option value="deactivate">Deactivate</option>
-                                    
+
                                 </select>
                             </td>
                         </tr>
@@ -239,16 +249,63 @@
 
 
                     </table>
+
+                    <br><br>
+
+                    <div id="paginationalign">
+                        <div class="pagination">
+                            <a href="#">&laquo;</a>
+                            <a href="#">1</a>
+                            <a href="#" class="activve">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                            <a href="#">&raquo;</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
+            <input class=" modal-state" id="modal-5" type="checkbox" />
+            <div class="modal">
+
+                <div class="modal__inner">
+                    <label class="modal__close" for="modal-5"></label>
+                    <section id="login">
+                        <h2>Create New Admin or Staff</h2>
+                        <form action="admin.html">
+                            <label for="fname">Type</label>
+                            <input type="text" id="username" placeholder="Admin /staff.." /> <br>
+                            <label for="fname">Email</label>
+                            <input type="text" id="username" placeholder="your username..." /> <br>
+                            <label for="fname">Phone number</label>
+                            <input type="text" id="username" placeholder="Admin or Staff" /> <br>
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="your password ..."> <br>
+                            <input type="submit" value="Create Account">
+                        </form>
+
+                    </section>
+
+                </div>
+            </div>
+
+
+
+
             <br><br><br><br>
         </div>
     </section>
 
     <footer>
         <p>
-            <span id="trackerText">Banka</span></span>
-            , Copyright &copy; 2019</p>
+            Copyright &copy; 2019</p>
     </footer>
     <script src="assets/js/app.js"></script>
 </body>

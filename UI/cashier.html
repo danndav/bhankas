@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Banka</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="banking application that powers banking operations">
+    <meta name="author" content="David Imodoye Daniel">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/search.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="main.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>
+                    <a href="index.html">
+                        <span id="logo">BANKA</span>
+                    </a>
+                </h1>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="" href="#">Staff</a>
+                    </li>
+                    <li>
+                        <a class="current" href="#">Cashier</a>
+                    </li>
+                    <li>
+                        <a href="stafflogin.html">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="login-bar">
+        <div class="dashboard-login">
+            <br>
+            <h1 class="text-center">Welcome Kunle Adetife </h1>
+            <div class="dashboard">
+                <div class="col-container">
+                    <div class="col white-bg2">
+                        <img src="assets/img/avatar.png" alt="">
+
+                    </div>
+                    <div class="col white-bg">
+                        <p class="admincal">Cashier ID</p>
+                        <h1 class="admincal">223</h1>
+                    </div>
+
+                    <div class="col white-bg">
+                        <p class="admincal">email</p>
+                        <h1 class="admincal">kunle@banka.com</h1>
+                    </div>
+
+                    <div class="col white-bg">
+                        <p class="admincal">Total ACCOUNT</p>
+                        <h1 class="admincal">200,000</h1>
+                    </div>
+
+
+                </div>
+                <br><br>
+                <br><br>
+                <div class="col example">
+                    <input type="text" placeholder="Search for account.." name="search">
+
+                    <button type="submit">Submit</button>
+
+
+                </div>
+
+                <br><br>
+                <div id="tableContainer">
+                    <table>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Account Name</th>
+                            <th>Account Number</th>
+
+                            <th>Credit</th>
+                            <th>Debit</th>
+                        </tr>
+
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>Debit</td>
+                            <td>0140012345</td>
+
+                            <td> <a href=""><button><label class="" for="modal-3">Credit
+                                        </label></button></a></td>
+                            <td> <a href=""><button><label class="" for="modal-4">Debit
+                                        </label></button></a></td>
+
+                        </tr>
+                    </table>
+                    <br><br>
+                </div>
+            </div>
+    </section>
+
+
+
+
+    <input class=" modal-state" id="modal-3" type="checkbox" />
+    <div class="modal">
+
+        <div class="modal__inner">
+            <label class="modal__close" for="modal-3"></label>
+            <section id="credit">
+                <h2>CREDIT ACCOUNT</h2>
+                <h4 class="text-center">ACCOUNT NUMBER: 0140012345</h4>
+                <form class="">
+                    <label for="amount">Credit </label>
+
+                    <label for="amount">Enter amount</label>
+                    <input type="text" id="" placeholder="#00000 ..."> <br>
+                    <input type="submit" value="Allow >>>">
+                </form>
+
+            </section>
+
+        </div>
+    </div>
+
+
+    <input class="modal-state" id="modal-4" type="checkbox" />
+    <div class="modal">
+
+        <div class="modal__inner">
+            <label class="modal__close" for="modal-4"></label>
+            <section id="credit">
+                <h2>Debit ACCOUNT</h2>
+                <h4 class="text-center">ACCOUNT NUMBER: 0140012345</h4>
+                <form class="">
+                    <label for="amount">Credit </label>
+
+                    <label for="amount">Enter amount</label>
+                    <input type="text" id="" placeholder="#00000 ..."> <br>
+                    <input type="submit" value="Allow >>>">
+                </form>
+
+            </section>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Copyright &copy; 2019</p>
+    </footer>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

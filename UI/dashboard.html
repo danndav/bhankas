@@ -10,7 +10,9 @@
     <meta name="author" content="David Imodoye Daniel">
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/login.css">
     <script src="main.js"></script>
+
 </head>
 
 <body>
@@ -19,19 +21,15 @@
             <div id="branding">
                 <h1>
                     <a href="index.html">
-                        <span>BANKA</span>
+                        <span id="logo">BANKA</span>
                     </a>
                 </h1>
             </div>
             <nav>
                 <ul>
                     <li>
-                        <a href="createbankaccount.html">Create Bank Account </a>
+                        <a href=""><label for="modal-2">Create Bank Account </label></a>
                     </li>
-                    <li>
-                        <a class="current" href="dashboard.html">Dashboard</a>
-                    </li>
-                    
                     <li>
                         <a href="login.html">Log Out</a>
                     </li>
@@ -40,14 +38,57 @@
         </div>
     </header>
 
+
+
+    <!-- transaction details modal -->
+
+
+    <input class="modal-state" id="modal-2" type="checkbox" />
+    <div class="modal">
+
+        <div class="modal__inner">
+            <label class="modal__close" for="modal-2"></label>
+            <section>
+
+                <form>
+                    <label class="labeltitle text-center">Account Type</label> <br>
+                    <select name="" id="">
+                        <option value="">please select type of account</option>
+                        <option value="">Saving Account</option>
+                        <option value="">Current Account</option>
+                    </select>
+                    <br><br>
+                    <label class="labeltitle text-center">Bio Data</label> <br>
+                    <label for="fullname">First Name</abel>
+                        <input type="text" id="fullname" placeholder="Your Firstname..." required>
+                        <label for="username">Last Name</label>
+                        <input type="text" id="fullname" placeholder="Your lastnamename..." required>
+                        <label for="email">Email</label>
+                        <input type="email" id="fullname" placeholder="Email..." required>
+                        <label for="image">Image</label>
+                        <input type="file" id="fullname" placeholder="#1000.." required>
+                        <label for="accountNumber">Account Number</abel>
+                            <input type="text" id="fullname" placeholder="YourAccount Number will be..." disabled>
+                            <label for="opeingBalnce">Opening Balance</label>
+                            <input type="text" id="fullname" placeholder="#1000.00">
+                            <input type="submit" onclick="" value="Create Account">
+                </form>
+
+
+            </section>
+
+        </div>
+    </div>
+
+
     <section id="login-bar">
         <div class="dashboard-login">
             <br>
             <h1 class="text-center">Welcome David Imodoye Daniel</h1>
             <div class="dashboard">
                 <div class="col-container">
-                    <div class="col white-bg">
-                        <img src="assets/img/profile.jpg" alt="">
+                    <div class="col white-bg2">
+                        <img src="assets/img/avatar.png" alt="">
 
 
                     </div>
@@ -69,7 +110,7 @@
 
                 </div>
 
-                <br>
+                <br><br>
                 <div id="textbox">
                     <h2 class="alignleft">
                         Transaction history
@@ -87,6 +128,7 @@
                             <th>Credit</th>
                             <th>Debit</th>
                             <th>Balance</th>
+                            <th> View Transactions</th>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -95,6 +137,8 @@
                             <td></td>
                             <td>#500,000</td>
                             <td>#25,000,000</td>
+                            <td> <a href=""><button><label class="showDetails select-button"
+                                            for="modal-1">Details</label></button></a></td>
                         </tr>
 
                         <tr>
@@ -104,6 +148,8 @@
                             <td>#25,000</td>
                             <td>#500,000</td>
                             <td>#25,000,000</td>
+                            <td> <a href=""><button><label class="showDetails select-button"
+                                            for="modal-1">Details</label></button></a></td>
                         </tr>
 
                         <tr>
@@ -113,6 +159,8 @@
                             <td></td>
                             <td>#500,000</td>
                             <td>#25,000,000</td>
+                            <td> <a href=""><button><label class="showDetails select-button"
+                                            for="modal-1">Details</label></button></a></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -121,6 +169,8 @@
                             <td></td>
                             <td>#500,000</td>
                             <td>#25,000,000</td>
+                            <td> <a href=""><button><label class="showDetails select-button"
+                                            for="modal-1">Details</label></button></a></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -129,6 +179,8 @@
                             <td></td>
                             <td>#500,000</td>
                             <td>#25,000,000</td>
+                            <td> <a href=""><button><label class="showDetails select-button"
+                                            for="modal-1">Details</label></button></a></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -137,6 +189,8 @@
                             <td>@50,000</td>
                             <td>#500,000</td>
                             <td>#25,000,000</td>
+                            <td> <a href=""><button><label class="showDetails select-button"
+                                            for="modal-1">Details</label></button></a></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -145,6 +199,8 @@
                             <td></td>
                             <td>#500,000</td>
                             <td>#25,000,000</td>
+                            <td> <a href=""><button><label class="showDetails select-button"
+                                            for="modal-1">Details</label></button></a></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -153,6 +209,8 @@
                             <td></td>
                             <td>#500,000</td>
                             <td>#25,000,000</td>
+                            <td> <a href=""><button><label class="showDetails select-button"
+                                            for="modal-1">Details</label></button></a></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -161,18 +219,64 @@
                             <td>#250,000</td>
                             <td>#500,000</td>
                             <td>#25,000,000</td>
+                            <td> <a href=""><button><label class="showDetails select-button"
+                                            for="modal-1">Details</label></button></a></td>
                         </tr>
                     </table>
+                    <br><br>
+
+                    <div id="paginationalign">
+                        <div class="pagination">
+                            <a href="#">&laquo;</a>
+                            <a href="#">1</a>
+                            <a href="#" class="activve">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                            <a href="#">&raquo;</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <br><br><br><br>
         </div>
     </section>
 
+    <input class="modal-state" id="modal-1" type="checkbox" />
+    <div class="modal">
+
+        <div class="modal__inner">
+            <label class="modal__close" for="modal-1"></label>
+            <section id="accountdetails">
+
+
+                ACCOUNT NAME: DAVID IMODOYE DANIEL<br><br>
+                ACCOUNT NUMBER: 0140012345<br><br>
+                DATE: 04/06/2019<br><br>
+                DECRIPTION:Online Banking 04/06/2019 20:44 <br><br>
+                DEBIT:#500,000 <br><br>
+                BALANCE:#25,000,000 <br><br>
+                AVAILABLE BALANCE:#200,0000 <br><br>
+                CURRENT BALANCE:#200,0000
+
+
+            </section>
+
+        </div>
+    </div>
+
+
+
     <footer>
         <p>
-            <span id="trackerText">Banka</span></span>
-            , Copyright &copy; 2019</p>
+            <span id="trackerText"></span></span>
+            Copyright &copy; 2019</p>
     </footer>
     <script src="assets/js/app.js"></script>
 </body>

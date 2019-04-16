@@ -386,7 +386,6 @@ footer {
 }
 
 
-
 .modal-state {
     display: none;
 }
@@ -410,10 +409,15 @@ footer {
     width: 50%;
     margin: auto;
     overflow: auto;
-    background: #fff;
+    background: #196282;
+    color: #fff;
     border-radius: 5px;
     padding: 1em 2em;
-    height: 80%;
+    height: 70%;
+}
+
+.modal__inner .detail {
+height: 50%
 }
 
 .modal__close {
@@ -472,6 +476,7 @@ footer {
 #paginationalign {
     margin-right: auto;
     margin-left: auto;
+    text-align: center
 }
 
 .pagination a {

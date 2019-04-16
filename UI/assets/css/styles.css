@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Sunflower:300');
+
 * {
     font-family: 'Sunflower', sans-serif;
     margin: 0;
@@ -19,12 +20,15 @@ body {
     margin: 0 auto;
     padding: 10px;
 }
+
 .text-center {
     text-align: center;
 }
-.container > h1#title {
+
+.container>h1#title {
     padding-top: 0;
 }
+
 ul {
     margin: 0;
     padding: 0;
@@ -40,34 +44,42 @@ header {
     min-height: 70px;
     border-bottom: #fff 3px solid;
 }
+
 header a {
     color: #ffffff;
     text-decoration: none;
     font-size: 16px;
 }
+
 header li {
     display: inline;
     padding: 0 20px 0 20px;
 }
+
 header #branding {
     float: left;
 }
+
 header #branding h1 {
     margin-top: -8px;
 }
+
 header nav {
     float: right;
     margin-top: 4px;
     /* font-size: 20px */
 }
+
 header #highlight,
 nav .current {
     color: #f65383;
     font-weight: bold;
 }
+
 nav .display {
     display: none
 }
+
 header #trackerText {
     font-size: 30px;
 }
@@ -78,7 +90,9 @@ header a:hover {
     cursor: pointer;
 }
 
-
+#logo {
+    font-size: 23px;
+}
 
 #backgroundImg {
     min-height: 90vh;
@@ -87,11 +101,13 @@ header a:hover {
     text-align: center;
     color: #ffffff;
 }
+
 #backgroundImg h1 {
     margin-top: 80px;
     font-size: 40px;
     margin-bottom: 10px;
 }
+
 #backgroundImg p {
     font-size: 20px;
     padding: 15px;
@@ -107,6 +123,7 @@ header a:hover {
     font-size: 18px;
     margin: 31px 136px;
 }
+
 #detailsButton {
     width: 40%;
     background: #196282;
@@ -116,14 +133,17 @@ header a:hover {
     font-size: 18px;
     margin-top: 10px;
 }
+
 #detailsButton:hover {
     background: #78a5b8;
     color: #ffffff;
 }
+
 #buttonSubmit:hover {
     background: #78a5b8;
     color: #ffffff;
 }
+
 .viewBtn {
     height: 20px;
     width: 100px;
@@ -146,6 +166,7 @@ header a:hover {
     font-weight: bold;
     border: 2px solid transparent;
 }
+
 .landingBtn:hover {
     background: whitesmoke;
     color: #1f769d;
@@ -162,11 +183,13 @@ header a:hover {
     font-size: 18px;
     margin: 0 auto;
 }
+
 #admin-details {
     width: 50%;
     height: 300px;
     margin: 0 auto;
 }
+
 .dark {
     padding: 15px;
     background: #35424a;
@@ -175,6 +198,7 @@ header a:hover {
     margin-bottom: 0px;
     height: 740px;
 }
+
 .white-login {
     padding: 15px;
     background: #fff;
@@ -183,6 +207,7 @@ header a:hover {
     height: 600px;
     margin: 0;
 }
+
 .whitee-login {
     padding: 15px;
     background: #fff;
@@ -191,11 +216,13 @@ header a:hover {
     height: 530px;
     margin: 0;
 }
+
 .col-container {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
+
 .col {
     flex: 1;
     padding: 10px;
@@ -204,6 +231,7 @@ header a:hover {
     color: white;
     border-radius: 30px;
 }
+
 .dashboard {
     margin: 25px 100px 0 100px;
     height: auto;
@@ -212,11 +240,13 @@ header a:hover {
 .white-bg {
     background: white;
 }
-.white-bg  img{
+
+.white-bg2 img {
     border-radius: 50%;
-    height:100px;
-    width:100px;
-    
+    height: 130px;
+    width: 130px;
+
+
 }
 
 
@@ -227,10 +257,12 @@ header a:hover {
     text-align: center;
     padding-top: 16px;
 }
+
 .showDetails,
 .deleteAccount {
-border-radius: 5px
+    border-radius: 5px
 }
+
 .select-button {
     width: 120px;
     padding: 5px;
@@ -239,20 +271,22 @@ border-radius: 5px
     box-sizing: border-box;
     font-size: 15px;
 }
-  
-  .showDetails:hover {
+
+.showDetails:hover {
     cursor: pointer;
     background: #196282;
     color: white
-  }
+}
 
-  .alignleft {
+.alignleft {
     float: left;
 }
+
 .alignright {
     float: right;
     padding-right: 30px;
 }
+
 #textbox {
     clear: both;
 }
@@ -269,42 +303,55 @@ table {
     width: 100%;
     border: 1px solid #ddd;
 }
+
 th {
     background: #196282 !important;
     color: white
 }
+
 tr:hover {
     background-color: #ffffff;
 }
+
 th,
 td {
     text-align: left;
     padding: 8px;
     border-bottom: 2px solid grey;
 }
-#one,#two,#four,#five,#seven{
-    color:green;
+
+#one,
+#two,
+#four,
+#five,
+#seven {
+    color: green;
     font-weight: bold;
 }
-#three,#eight,#six{
-    color:red;
+
+#three,
+#eight,
+#six {
+    color: red;
     font-weight: bold;
 }
+
 .alignleft {
     float: left;
 }
+
 .alignright {
     float: right;
     padding-right: 30px;
 }
 
 
-section > #admin-bar,
+section>#admin-bar,
 #login-bar,
-#signup-bar
-#dashboard-bar {
+#signup-bar #dashboard-bar {
     width: 100%;
 }
+
 #settingsImage {
     width: 50%;
     margin: 0 auto;
@@ -320,3 +367,127 @@ footer {
     margin: 0 auto !important;
 }
 
+
+/* modal 2 */
+
+/* [Object] Modal
+ * =============================== */
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    background: rgba(0, 0, 0, .9);
+    transition: opacity .25s ease;
+}
+
+
+
+.modal-state {
+    display: none;
+}
+
+.modal-state:checked+.modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-state:checked+.modal .modal__inner {
+    top: 0;
+}
+
+.modal__inner {
+    transition: top .25s ease;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    margin: auto;
+    overflow: auto;
+    background: #fff;
+    border-radius: 5px;
+    padding: 1em 2em;
+    height: 80%;
+}
+
+.modal__close {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+}
+
+.modal__close:after,
+.modal__close:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 1.5em;
+    background: #ccc;
+    display: block;
+    transform: rotate(45deg);
+    left: 50%;
+    margin: -3px 0 0 -1px;
+    top: 0;
+}
+
+.modal__close:hover:after,
+.modal__close:hover:before {
+    background: #aaa;
+}
+
+.modal__close:before {
+    transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+
+    .modal__inner {
+        width: 90%;
+        height: 90%;
+        box-sizing: border-box;
+    }
+}
+
+#accountdetails {
+    background-color: #196282;
+    color: #f4f4f4;
+    padding: 10px;
+    font-weight: bold
+}
+
+/*pagination*/
+.pagination {
+    display: inline-block;
+}
+
+#paginationalign {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.activve {
+    background-color: #196282;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.activve) {
+    background-color: #ddd;
+    border-radius: 5px;
+}

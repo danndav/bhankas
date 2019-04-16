@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,45 +10,39 @@
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
+
 <body>
-        <header>
+    <header>
         <div class="container">
             <div id="branding">
                 <h1>
                     <a href="index.html">
-                        <span >BANKA</span>
+                        <span id="logo">BANKA</span>
                     </a>
                 </h1>
             </div>
-            <nav>
-                <ul>
-                    <li>
-                        <a class="current" href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="login.html">User Login</a>
-                    </li>
-                    <li>
-                        <a href="stafflogin.html">Staff Login</a>
-                    </li>
-                </ul>
-            </nav>
+
         </div>
     </header>
     <section id="login">
         <h2>Admin Login</h2>
+
         <form action="admin.html" class="form-div">
+            <span><a href="login.html">User Login</a></span><span class="alignright"><a href="stafflogin.html">staff
+                    Login</a></span>
+            <br>
+            <br>
             <label for="fname">username</label>
-            <input type="text" id="username" placeholder="your username..." required/> <br>
+            <input type="text" id="username" placeholder="your username..." required /> <br>
             <label for="password">password</label>
-            <input type="password" id="password" placeholder="your password ..."required> <br>
+            <input type="password" id="password" placeholder="your password ..." required> <br>
             <input type="submit" value="sign in">
         </form>
-       
+
     </section>
-    
-    
+
 
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>

@@ -13,7 +13,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
     it('it should GET all users', (done) => {
       chai
         .request(server)
-        .get('/api/v1/getUsers/')
+        .get('/api/v1/users/')
         .end((err, res) => {
           res.body.should.have
             .property('message')
@@ -30,8 +30,8 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
         .request(server)
         .post('/api/v1/auth/signup')
         .send({
-          email: 'tolaniabass@gmail.com',
-          firstName: 'Tolani',
+          email: 'hellos@gmail.com',
+          firstName: 'hello',
           lastName: 'Abass',
           phoneNumber: '08023461217',
           password: 'tolaniabass',
@@ -49,6 +49,46 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
           done();
         });
     });
+
+    it('it should not signup user that exist', (done) => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signup')
+        .send({
+          email: 'danielimodoye@gmail.com',
+          firstName: 'Imodoye',
+          lastName: 'David',
+          phoneNumber: '08023461217',
+          password: 'danielimodoye',
+          type: 'client',
+          isAdmin: false,
+        })
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.have.property('status').to.equals(400);
+          res.body.should.have
+            .property('message')
+            .to.equals('email already exits in our database');
+
+          done();
+        });
+    });
+
+    it('it should check for empty user', (done) => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signup')
+        .send({})
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.have.property('status').to.equals(400);
+          res.body.should.have
+            .property('message')
+            .to.equals('Please fill all fields');
+
+          done();
+        });
+    })
   });
 
   describe('/POST REQUEST', () => {
@@ -72,17 +112,37 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
         });
     });
 
-    it('it should not login unregistered user ', (done) => {
+
+    it('it should check for unregistered email ', (done) => {
       chai
         .request(server)
-        .post('/api/v1/auth/login')
+        .post('/api/v1/auth/signin')
         .send({
-          email: 'danielimodoye@gmail.com',
-          password: 'danielimodoye',
+          email: 'yyyttt@gmail.com',
+          password: 'tolaniabass',
         })
         .end((err, res) => {
-          res.should.have.status(404);
-
+          res.should.have.status(400);
+          res.body.should.have
+            .property('error')
+            .to.equals('email does not match with our database');
+          done();
+        });
+    });
+    it('it should check for wrong password ', (done) => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signin')
+        .send({
+          email: 'tolaniabass@gmail.com',
+          password: 'wertyui',
+        })
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.have
+            .property('error')
+            .to.equals('password incorrect');
+          // console.log(res);
           done();
         });
     });
@@ -91,7 +151,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
         .request(server)
         .post('/api/v1/auth/signup')
         .send({
-          email: 'danielimodoye@gmail.com',
+          email: 'dnewusers@gmail.com',
           firstName: 'Imodoye',
           lastName: 'David',
           phoneNumber: '08023461217',

@@ -31,9 +31,13 @@ class DummyControllerAcccount {
    */
   static CreateBankAccounts(req, res) {
     const {
+      id,
       firstName,
       lastName,
       email,
+    } = req.userData.payload;
+
+    const {
       type,
       balance,
     } = req.body;
@@ -41,10 +45,8 @@ class DummyControllerAcccount {
     const usersAccount = {
       id: accountStore.length + 1,
       accountNumber: Math.floor(Math.random() * 9000000000) + 1000000000,
-      firstName,
-      lastName,
-      email,
       type,
+      owner: id,
       status: 'active',
       balance: parseFloat(balance, 10).toFixed(2),
     };
@@ -54,9 +56,9 @@ class DummyControllerAcccount {
       status: 201,
       data: {
         accountNumber: usersAccount.accountNumber,
-        firstName: usersAccount.firstName,
-        lastName: usersAccount.lastName,
-        email: usersAccount.email,
+        firstName,
+        lastName,
+        email,
         type: usersAccount.type,
         openingBalance: usersAccount.balance,
       },
@@ -76,7 +78,7 @@ class DummyControllerAcccount {
     const {
       accountNumber,
     } = req.params;
-    console.log(accountNumber);
+
     const existingAccount = accountStore.find(account => account.accountNumber === parseInt(accountNumber, 10));
 
     if (existingAccount) {
@@ -111,7 +113,7 @@ class DummyControllerAcccount {
     const {
       accountNumber,
     } = req.params;
-    console.log(accountNumber);
+
     const existingAccount = accountStore.find(account => account.accountNumber === parseInt(accountNumber, 10));
 
     if (existingAccount) {
@@ -123,8 +125,8 @@ class DummyControllerAcccount {
 
       });
     }
-    return res.status(400).json({
-      status: 400,
+    return res.status(404).json({
+      status: 404,
       message: 'This account  does not exist',
     });
   }

@@ -5,6 +5,13 @@ import DummyControllerUser from '../controllers/dummyContollerUser';
 import DummyControllerAccount from '../controllers/dummyControllerAccount';
 import DummyControllerTransaction from '../controllers/dummyControllerTransaction';
 import DummyMiddleware from '../middlewares/DummyMiddlewares';
+import DummyAuthorization from '../middlewares/DummyAuthentication';
+
+const {
+  verifyUser,
+  verifyStaff,
+  verifyAdmin,
+} = DummyAuthorization;
 
 
 const {
@@ -29,24 +36,22 @@ const {
 
 const {
   userDummyData,
-  accountDummyData,
 } = DummyMiddleware;
 
 const router = Router();
 
 // Dummy Routes
-router.get('/getUsers/', getAllUsers);
-router.get('/getAccounts/', getAllAccounts);
-router.get('/getTransactions/', getAllTransactions);
+router.get('/users/', getAllUsers);
+router.get('/accounts', getAllAccounts);
+router.get('/transactions/', getAllTransactions);
 
 router.post('/auth/signup', userDummyData, userSignup);
 router.post('/auth/signin/', userLogin);
-router.post('/createAccounts/', accountDummyData, CreateBankAccounts);
-router.patch('/getAccounts/:accountNumber', PatchBankAccounts);
-router.delete('/deleteAccount/:accountNumber', DeleteAccount);
-router.delete('/deleteAccount/:accountNumber', DeleteAccount);
-router.post('/transactions/:accountNumber/credit', CreditAccount);
-router.post('/transactions/:accountNumber/debit', DebitAccount);
+router.post('/accounts/', verifyUser, CreateBankAccounts);
+router.patch('/accounts/:accountNumber', verifyAdmin, PatchBankAccounts);
+router.delete('/accounts/:accountNumber', verifyAdmin, DeleteAccount);
+router.post('/transactions/:accountNumber/credit', verifyStaff, CreditAccount);
+router.post('/transactions/:accountNumber/debit', verifyStaff, DebitAccount);
 
 
 export default router;

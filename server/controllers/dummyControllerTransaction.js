@@ -8,12 +8,12 @@ import transactionStore from '../utilities/dummyData/transaction';
  */
 class DummyControllerTransaction {
   /**
-     * @description get all transactions
-     * @staticmethod getAllTransactions
-     * @param  {object} req - req object
-     * @param {object} res - Response object
-     * @return {json} res.json
-     */
+   * @description get all transactions
+   * @staticmethod getAllTransactions
+   * @param  {object} req - req object
+   * @param {object} res - Response object
+   * @return {json} res.json
+   */
   static getAllTransactions(req, res) {
     res.status(200).json({
       message: 'Successfully fetched all Transactions',
@@ -24,12 +24,12 @@ class DummyControllerTransaction {
 
 
   /**
-     * @description credit an account
-     * @staticmethod\ CreditAccount
-     * @param  {object} req - req object
-     * @param {object} res - Response object
-     * @return {json} res.json
-     */
+   * @description credit an account
+   * @staticmethod\ CreditAccount
+   * @param  {object} req - req object
+   * @param {object} res - Response object
+   * @return {json} res.json
+   */
   static CreditAccount(req, res) {
     const {
       accountNumber,
@@ -39,14 +39,16 @@ class DummyControllerTransaction {
     if (existingAccount) {
       const {
         amount,
-        cachier,
       } = req.body;
+      const {
+        id,
+      } = req.userData.payload;
       const transactionAdded = {
         id: transactionStore.length + 1,
         createdOn: Date.now(),
         type: 'credit',
         accountNumber,
-        cachier,
+        cachier: id,
         amount,
         oldBalance: existingAccount.balance,
         newBalance: existingAccount.balance + amount,
@@ -68,12 +70,12 @@ class DummyControllerTransaction {
 
 
   /**
-     * @description debit an account
-     * @staticmethod DebitAccount
-     * @param  {object} req - req object
-     * @param {object} res - Response object
-     * @return {json} res.json
-     */
+   * @description debit an account
+   * @staticmethod DebitAccount
+   * @param  {object} req - req object
+   * @param {object} res - Response object
+   * @return {json} res.json
+   */
   static DebitAccount(req, res) {
     const {
       accountNumber,
@@ -83,8 +85,11 @@ class DummyControllerTransaction {
     if (existingAccount) {
       const {
         amount,
-        cachier,
       } = req.body;
+
+      const {
+        id,
+      } = req.userData.payload;
 
       const oldBalance = existingAccount.balance;
       if (amount > oldBalance) {
@@ -98,7 +103,7 @@ class DummyControllerTransaction {
         createdOn: Date.now(),
         type: 'debit',
         accountNumber,
-        cachier,
+        cachier: id,
         amount,
         oldBalance: existingAccount.balance,
         newBalance: existingAccount.balance - amount,
@@ -112,8 +117,8 @@ class DummyControllerTransaction {
         },
       });
     }
-    return res.status(400).json({
-      status: 400,
+    return res.status(404).json({
+      status: 404,
       error: 'This account  does not exist',
     });
   }

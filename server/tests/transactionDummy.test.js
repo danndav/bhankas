@@ -5,15 +5,37 @@ import server from '../app';
 chai.use(chaiHttp);
 chai.should();
 
+
+let userToken = '';
+
+
+before(() => {
+  it('it should login user', (done) => {
+    chai
+      .request(server)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: 'sannimicheal@gmail.com',
+        password: 'sannimicheal',
+      })
+      .end((err, res) => {
+        userToken = res.body.data.token;
+        res.body.should.have.property('status').to.equals(200);
+        res.body.should.have.property('data').to.be.an('object');
+        done();
+      });
+  });
+});
+
 describe('UNIT TESTS FOR DUMMY TRANSACTION CONTROLLERS', () => {
   /*
-     * Test the /GET route
-     */
+   * Test the /GET route
+   */
   describe('/GET REQUEST', () => {
     it('it should GET all transactions', (done) => {
       chai
         .request(server)
-        .get('/api/v1/getTransactions/')
+        .get('/api/v1/transactions/')
         .end((err, res) => {
           res.body.should.have
             .property('message')
@@ -31,6 +53,7 @@ describe('UNIT TESTS FOR DUMMY TRANSACTION CONTROLLERS', () => {
       chai
         .request(server)
         .post(`/api/v1/transactions/${accountNumber}/credit`)
+        .set('authorization', `Bearer ${userToken}`)
         .send({
           amount: 33200,
           cachier: 3,
@@ -51,6 +74,7 @@ describe('UNIT TESTS FOR DUMMY TRANSACTION CONTROLLERS', () => {
       chai
         .request(server)
         .post(`/api/v1/transactions/${accountNumber}/credit`)
+        .set('authorization', `Bearer ${userToken}`)
         .send({
           amount: 200.20,
           cachier: 3,
@@ -74,13 +98,12 @@ describe('UNIT TESTS FOR DUMMY TRANSACTION CONTROLLERS', () => {
       chai
         .request(server)
         .post(`/api/v1/transactions/${accountNumber}/debit`)
+        .set('authorization', `Bearer ${userToken}`)
         .send({
           amount: 33,
           cachier: 3,
         })
         .end((err, res) => {
-          console.log(res);
-
           res.should.have.status(201);
           res.body.should.have.property('status').to.equals(201);
           res.body.should.have.property('data').to.be.an('object');
@@ -96,6 +119,7 @@ describe('UNIT TESTS FOR DUMMY TRANSACTION CONTROLLERS', () => {
       chai
         .request(server)
         .post(`/api/v1/transactions/${accountNumber}/debit`)
+        .set('authorization', `Bearer ${userToken}`)
         .send({
           amount: 5000000.20,
           cachier: 3,
@@ -117,13 +141,14 @@ describe('UNIT TESTS FOR DUMMY TRANSACTION CONTROLLERS', () => {
       chai
         .request(server)
         .post(`/api/v1/transactions/${accountNumber}/debit`)
+        .set('authorization', `Bearer ${userToken}`)
         .send({
           amount: 200.20,
           cachier: 3,
         })
         .end((err, res) => {
-          res.should.have.status(400);
-          res.should.have.property('status').to.equals(400);
+          res.should.have.status(404);
+          res.should.have.property('status').to.equals(404);
           res.body.should.have
             .property('error')
             .to.equals('This account  does not exist');

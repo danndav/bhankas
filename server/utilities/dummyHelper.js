@@ -42,16 +42,26 @@ class helperClass {
    * @return {string}
    */
 
-  static  generateToken({
-    email,
-    type,
-  }) {
+  static generateToken(payload) {
     return jwt.sign({
-      email,
-      type,
-    }, 'privatekey', {
+      payload,
+    }, process.env.SECRET_KEY, {
       expiresIn: '2h',
     });
+  }
+
+  /**
+   * Userhelper Class
+   * @staticmethod VerifyToken
+   * @param  {array} dataStore
+   * @param {string} email
+   * @param {string} type
+   * @return {string}
+   */
+
+  static verifyToken(token) {
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    return decoded;
   }
 }
 

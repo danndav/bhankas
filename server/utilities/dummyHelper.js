@@ -45,7 +45,7 @@ class helperClass {
   static generateToken(payload) {
     return jwt.sign({
       payload,
-    }, process.env.SECRET_KEY, {
+    }, 'tokenverification', {
       expiresIn: '2h',
     });
   }
@@ -60,7 +60,7 @@ class helperClass {
    */
 
   static verifyToken(token) {
-    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    const decoded = jwt.verify(token, 'tokenverification');
     return decoded;
   }
 }

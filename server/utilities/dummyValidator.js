@@ -1,9 +1,11 @@
 import Joi from 'joi';
 
-const firstName = Joi.string().trim().min(2)
+const firstName = Joi.string().trim().min(2).regex(/^[A-Za-z]*$/)
+  .error(() => 'enter a valid name and name must not be less than 2')
   .min(1)
   .required();
-const lastName = Joi.string().trim().min(2)
+const lastName = Joi.string().trim().min(2).regex(/^[A-Za-z]*$/)
+  .error(() => 'enter a valid name and name must not be less than 2')
   .min(1)
   .required();
 const email = Joi.string().email().trim().min(8)

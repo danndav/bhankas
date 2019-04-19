@@ -3,7 +3,6 @@ import dummySchema from '../utilities/dummyValidator';
 
 const {
   userdummySchema,
-  accountdummySchema,
 } = dummySchema;
 /**
  *
@@ -42,20 +41,6 @@ class DummyMiddleware {
    * @param {function} next - middleware next (for error handling)
    * @return {json} res.json
    */
-  static accountDummyData(req, res, next) {
-    if (Object.keys(req.body).length === 0) {
-      return res.status(400).json({
-        status: 400,
-        message: 'Please fill all fields',
-      });
-    }
-    Joi.validate(req.body, accountdummySchema)
-      .then(() => next())
-      .catch(err => res.status(400).json({
-        status: 400,
-        message: err.details[0].message,
-      }));
-  }
 }
 
 export default DummyMiddleware;

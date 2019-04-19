@@ -43,19 +43,17 @@ class DummyControllerUser {
       isAdmin,
     } = req.body;
 
-    const user = dataStore.find(email => email.email === email);
+    const user = dataStore.find(email => email.email === req.body.email);
 
     if (user) {
       return res.status(400).json({
         status: 400,
-        message: 'email already exits',
+        message: 'email already exits in our database',
       });
     }
 
 
-    const passwordhashed =  helperClass.hashPassword(password);
-
-    // const passwordhashed = helperClass.hashPassword(password);
+    const passwordhashed = helperClass.hashPassword(password);
 
     const users = {
       id: dataStore.length + 1,
@@ -72,9 +70,9 @@ class DummyControllerUser {
 
 
     const token = helperClass.generateToken({
-      email,
-      type,
+      ...users,
     });
+
 
     return res.header('x-access-token', token).status(201).json({
       status: 201,
@@ -107,7 +105,6 @@ class DummyControllerUser {
     } = req.body;
     const userChecked = dataStore.find(user => user.email === userEmail);
     if (userChecked) {
-      console.log(userChecked);
       const {
         email,
         type,
@@ -115,6 +112,7 @@ class DummyControllerUser {
         lastName,
         id,
         password,
+        isAdmin,
       } = userChecked;
 
 
@@ -125,7 +123,10 @@ class DummyControllerUser {
           id,
           email,
           type,
+          isAdmin,
         });
+
+
         return res.header('x-access-token', token).status(200).json({
           status: 200,
           data: {
@@ -135,18 +136,19 @@ class DummyControllerUser {
             lastName,
             email,
             type,
+            isAdmin,
           },
           message: 'Authentication Successful',
         });
       }
       return res.status(400).json({
-        status: 404,
-        error: 'please type in the correct Password ',
+        status: 400,
+        error: 'password incorrect',
       });
     }
     return res.status(400).json({
-      status: 404,
-      error: 'please input the correct email',
+      status: 400,
+      error: 'email does not match with our database',
     });
   }
 }

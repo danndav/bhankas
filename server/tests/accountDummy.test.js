@@ -72,27 +72,7 @@ describe('UNIT TESTS FOR DUMMY USER Accounts', () => {
           });
       });
 
-      it('it should reject unauthorize user to create bank account ', (done) => {
-        chai
-          .request(server)
-          .post('/api/v1/accounts')
-          .set('authorization', `Bearer ${'erty987654'}`)
-          .send({
-            type: 'current',
-            balance: 123,
-          })
-          .end((err, res) => {
-            res.should.have.status(201);
-            res.body.should.have.property('status').to.equals(401);
-            res.body.should.have.property('data').to.be.an('object');
-            res.body.should.have
-              .property('error')
-              .to.equals('Unauthorized user, bank account cant be created');
 
-            // console.log("hello Token", userToken)
-            done();
-          });
-      });
     });
   });
 
@@ -120,43 +100,7 @@ describe('UNIT TESTS FOR DUMMY USER Accounts', () => {
         });
     });
 
-    it('it should  not allow an unauthorized user to patch account ', (done) => {
-      const accounNumber = 123456789;
-      chai
-        .request(server)
-        .patch(`/api/v1/accounts/${accounNumber}`)
-        .set('authorization', `Bearer ${'234567'}`)
-        .send({
-          status: 'inactive',
-        })
-        .end((err, res) => {
-          res.should.have.status(201);
-          res.body.should.have.property('status').to.equals(401);
-          res.body.should.have
-            .property('error')
-            .to.equals('Authentication Failed');
 
-
-          done();
-        });
-    });
-
-
-    it('it should not patch unregistered account ', (done) => {
-      const accounNumber = 1098766549;
-      chai
-        .request(server)
-        .patch(`/api/v1/accounts/${accounNumber}`)
-        .set('authorization', `Bearer ${userToken}`)
-        .send({
-          status: 'inactive',
-        })
-        .end((err, res) => {
-          res.should.have.status(404);
-
-          done();
-        });
-    });
   });
 
   describe('/DELETE REQUEST', () => {

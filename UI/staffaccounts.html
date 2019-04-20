@@ -92,7 +92,8 @@
                             <td> <a href=""><button><label class="" for="modal-3">Credit/Debit</label></button></a></td>
                             <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
                                     </button></a></td>
-                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td><a href="#popup1"><button class="showDetails select-button">Delete Account</button></a>
+                            </td>
 
                         </tr>
 
@@ -103,19 +104,8 @@
                             <td> <a href=""><button><label class="" for="modal-3">Credit/Debit</label></button></a></td>
                             <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
                                     </button></a></td>
-                            <td><a href=""><button class="DeleteAccount select-button">Delete Account</button></a></td>
-
-                        </tr>
-
-
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>David Imodoye Daniel</td>
-                            <td>0140012345</td>
-                            <td> <a href=""><button><label class="" for="modal-3">Credit/Debit</label></button></a></td>
-                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
-                                    </button></a></td>
-                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td><a href="#popup1"><button class="DeleteAccount select-button">Delete
+                                        Account</button></a></td>
 
                         </tr>
 
@@ -127,7 +117,8 @@
                             <td> <a href=""><button><label class="" for="modal-3">Credit/Debit</label></button></a></td>
                             <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
                                     </button></a></td>
-                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td><a href="#popup1"><button class="showDetails select-button">Delete Account</button></a>
+                            </td>
 
                         </tr>
 
@@ -139,7 +130,21 @@
                             <td> <a href=""><button><label class="" for="modal-3">Credit/Debit</label></button></a></td>
                             <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
                                     </button></a></td>
-                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td><a href="#popup1"><button class="showDetails select-button">Delete Account</button></a>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>David Imodoye Daniel</td>
+                            <td>0140012345</td>
+                            <td> <a href=""><button><label class="" for="modal-3">Credit/Debit</label></button></a></td>
+                            <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
+                                    </button></a></td>
+                            <td><a href="#popup1"><button class="showDetails select-button">Delete Account</button></a>
+                            </td>
 
                         </tr>
 
@@ -150,7 +155,8 @@
                             <td> <a href=""><button><label class="" for="modal-3">Credit/Debit</label></button></a></td>
                             <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
                                     </button></a></td>
-                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td><a href="#popup1"><button class="showDetails select-button">Delete Account</button></a>
+                            </td>
 
                         </tr>
                         <tr>
@@ -160,7 +166,8 @@
                             <td> <a href=""><button><label class="" for="modal-3">Credit/Debit</label></button></a></td>
                             <td><a href="viewuseraccount.html"><button class="showDetails select-button">View Account
                                     </button></a></td>
-                            <td><a href=""><button class="showDetails select-button">Delete Account</button></a></td>
+                            <td><a href="#popup1"><button class="showDetails select-button">Delete Account</button></a>
+                            </td>
 
                         </tr>
 
@@ -197,6 +204,20 @@
     </section>
 
 
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Comfirm Delete</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <div id="delete">
+                    <a href="#"><button class="showDetails select-button alignleft">YES</button></a>
+                    <a href="#"><button class="showDetails select-button alignright">NO</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <input class=" modal-state" id="modal-3" type="checkbox" />
     <div class="modal">
@@ -204,8 +225,9 @@
         <div class="modal__inner">
             <label class="modal__close" for="modal-3"></label>
             <section id="credit">
-                <h2>CREDIT / DEBIT ACCOUNT</h2>
+                <h3>DAVID IMODOYE DANIEL ACCOUNT</h3>
                 <h4 class="text-center">ACCOUNT NUMBER: 0140012345</h4>
+                <br>
                 <form class="">
                     <label for="amount">Credit / Debit User</label>
                     <select name="" id="">
@@ -215,7 +237,7 @@
 
                         <label for="amount">Enter amount</label>
                         <input type="text" id="" placeholder="#00000 ..."> <br>
-                        <input type="submit" value="Allow >>>">
+                        <input type="submit" value="SUBMIT">
                 </form>
 
             </section>

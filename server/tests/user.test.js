@@ -51,7 +51,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
         .request(server)
         .post('/api/v1/auth/signup')
         .send({
-          email: 'abuuuuuus@gmail.com',
+          email: 'abbbus@gmail.com',
           firstName: 'hello',
           lastName: 'Abass',
           phoneNumber: '08023461217',
@@ -154,7 +154,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
         .request(server)
         .post('/api/v1/auth/signup')
         .send({
-          email: 'dnewu9876ryys@gmail.com',
+          email: 'dnewuwertywert@gmail.com',
           firstName: 'Imodoye',
           lastName: 'David',
           phoneNumber: '08023461217',

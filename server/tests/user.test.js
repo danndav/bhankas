@@ -1,11 +1,21 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../app';
+import queryProivider from '../utilities/queries';
 
 chai.use(chaiHttp);
 chai.should();
 
 let userToken = '';
+
+before(() => {
+  const email = 'tester@gmail.com';
+  return queryProivider.deleteUserByEmailQuery(email).then((res) => {
+    console.log(res);
+  }).catch(() => {});
+});
+
+
 
 before(() => {
   it('it should login user', (done) => {
@@ -51,7 +61,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
         .request(server)
         .post('/api/v1/auth/signup')
         .send({
-          email: 'dannndav@gmail.com',
+          email: 'tester@gmail.com',
           firstName: 'hello',
           lastName: 'Abass',
           phoneNumber: '08023461217',
@@ -149,27 +159,6 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
         });
     });
 
-    it('it should make a post request if all fields are not empty ', (done) => {
-      chai
-        .request(server)
-        .post('/api/v1/auth/signup')
-        .send({
-          email: 'danndaveee@gmail.com',
-          firstName: 'Imodoye',
-          lastName: 'David',
-          phoneNumber: '08023461217',
-          password: 'danielimodoye',
-          type: 'client',
-          isAdmin: false,
-        })
-        .end((err, res) => {
-          res.body.should.have
-            .property('message')
-            .to.equals('New user created successfully');
-          res.body.should.have.property('status').to.equals(201);
-          // res.body.should.have.property('token').to.be.a('string');
-          done();
-        });
-    });
+
   });
 });

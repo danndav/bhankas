@@ -9,8 +9,8 @@
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./server -s",
     "build": "npm run clean && npm run build-babel",
-    "test-dev": "nyc --require @babel/register ---reporter=html --reporter=text mocha./server/tests/*.js --timeout 20000 --watch --exit",
-    "test": "nyc --reporter=html --reporter=text mocha --require @babel/polyfill --require @babel/register --timeout 5000 ./server/tests/*.js --exit",
+    "test-dev": "nyc --require @babel/register ---reporter=html --reporter=text mocha./server/tests --timeout 20000 --watch --exit",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/polyfill --require @babel/register --timeout 5000 ./server/tests --exit",
     "lint": " eslint  ./server/**/*.js  --fix || true",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test"
@@ -54,6 +54,7 @@
     "express": "^4.16.4",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "pg": "^7.10.0"
   }

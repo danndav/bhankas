@@ -5,6 +5,26 @@ import server from '../app';
 chai.use(chaiHttp);
 chai.should();
 
+let userToken = '';
+
+before(() => {
+  it('it should login user', (done) => {
+    chai
+      .request(server)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: 'aworenidapo@gmail.com',
+        password: 'dapoaworeni',
+      })
+      .end((err, res) => {
+        userToken = res.body.data.token;
+        res.body.should.have.property('status').to.equals(200);
+        res.body.should.have.property('data').to.be.an('object');
+        done();
+      });
+  });
+});
+
 describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
   /*
    * Test the /GET route
@@ -14,12 +34,13 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
       chai
         .request(server)
         .get('/api/v1/users/')
+        .set('authorization', `Bearer ${userToken}`)
         .end((err, res) => {
           res.body.should.have
             .property('message')
             .to.equals('Successfully fetched all users');
           res.should.have.property('status').to.equals(200);
-          res.body.should.have.property('data').to.be.an('array');
+          // res.body.should.have.property('data').to.be.an('object');
           done();
         });
     });
@@ -30,7 +51,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
         .request(server)
         .post('/api/v1/auth/signup')
         .send({
-          email: 'hellos@gmail.com',
+          email: 'abuuuuuus@gmail.com',
           firstName: 'hello',
           lastName: 'Abass',
           phoneNumber: '08023461217',
@@ -39,13 +60,11 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
           isAdmin: false,
         })
         .end((err, res) => {
-          res.should.have.status(201);
-          res.body.should.have.property('status').to.equals(201);
-          res.body.should.have.property('data').to.be.an('object');
           res.body.should.have
             .property('message')
             .to.equals('New user created successfully');
-
+          res.body.should.have.property('status').to.equals(201);
+          res.body.should.have.property('data').to.be.a('object');
           done();
         });
     });
@@ -55,7 +74,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
         .request(server)
         .post('/api/v1/auth/signup')
         .send({
-          email: 'danielimodoye@gmail.com',
+          email: "aworenidapo@gmail.com",
           firstName: 'Imodoye',
           lastName: 'David',
           phoneNumber: '08023461217',
@@ -68,7 +87,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
           res.body.should.have.property('status').to.equals(400);
           res.body.should.have
             .property('message')
-            .to.equals('email already exits in our database');
+            .to.equals('User with this email aworenidapo@gmail.com exists already', );
 
           done();
         });
@@ -113,7 +132,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
     });
 
 
-    it('it should check for unregistered email ', (done) => {
+    it('it should check for unregistered email and wrong password ', (done) => {
       chai
         .request(server)
         .post('/api/v1/auth/signin')
@@ -122,36 +141,20 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
           password: 'tolaniabass',
         })
         .end((err, res) => {
-          res.should.have.status(400);
+          res.should.have.status(401);
           res.body.should.have
-            .property('error')
-            .to.equals('email does not match with our database');
+            .property('responseMessage')
+            .to.equals('Wrong Email and Password Combination. Please Check your credentials');
           done();
         });
     });
-    it('it should check for wrong password ', (done) => {
-      chai
-        .request(server)
-        .post('/api/v1/auth/signin')
-        .send({
-          email: 'tolaniabass@gmail.com',
-          password: 'wertyui',
-        })
-        .end((err, res) => {
-          res.should.have.status(400);
-          res.body.should.have
-            .property('error')
-            .to.equals('password incorrect');
-          // console.log(res);
-          done();
-        });
-    });
+
     it('it should make a post request if all fields are not empty ', (done) => {
       chai
         .request(server)
         .post('/api/v1/auth/signup')
         .send({
-          email: 'dnewusers@gmail.com',
+          email: 'dnewu9876ryys@gmail.com',
           firstName: 'Imodoye',
           lastName: 'David',
           phoneNumber: '08023461217',

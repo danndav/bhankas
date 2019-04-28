@@ -219,7 +219,7 @@ class AccountController {
                     // return res.status(400).json({
                     //     status: 400,
                     //     message: 'Could not fetch  accounts',
-                    // });
+                    // })
                 });
         }
     }

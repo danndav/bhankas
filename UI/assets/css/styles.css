@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Sunflower:300');
+@import url("https://fonts.googleapis.com/css?family=Sunflower:300");
 
 * {
-    font-family: 'Sunflower', sans-serif;
+    font-family: "Sunflower", sans-serif;
     margin: 0;
 }
-
 
 body {
     min-height: 100%;
@@ -34,7 +33,6 @@ ul {
     padding: 0;
     font-weight: bold;
 }
-
 
 /* Header **/
 header {
@@ -77,7 +75,7 @@ nav .current {
 }
 
 nav .display {
-    display: none
+    display: none;
 }
 
 header #trackerText {
@@ -112,7 +110,6 @@ header a:hover {
     font-size: 20px;
     padding: 15px;
 }
-
 
 #buttonSubmit {
     width: 45%;
@@ -153,7 +150,6 @@ header a:hover {
     left: 50%;
     background: #ba7e0f;
 }
-
 
 .landingBtn {
     width: 30%;
@@ -245,11 +241,7 @@ header a:hover {
     border-radius: 50%;
     height: 130px;
     width: 130px;
-
-
 }
-
-
 
 .admincal {
     color: rgb(25, 98, 130);
@@ -260,7 +252,7 @@ header a:hover {
 
 .showDetails,
 .deleteAccount {
-    border-radius: 5px
+    border-radius: 5px;
 }
 
 .select-button {
@@ -275,7 +267,7 @@ header a:hover {
 .showDetails:hover {
     cursor: pointer;
     background: #196282;
-    color: white
+    color: white;
 }
 
 .alignleft {
@@ -287,15 +279,28 @@ header a:hover {
     padding-right: 30px;
 }
 
+.moveright {
+    margin-left: 50px;
+    background-color: red;
+    color: #ffffff;
+    width: 100px;
+    height: 30px;
+}
+
+.showw {
+    background-color: green;
+    color: #ffffff;
+    width: 100px;
+    height: 30px;
+}
+
 #textbox {
     clear: both;
 }
 
-
 #tableContainer {
     overflow-x: auto;
 }
-
 
 table {
     border-collapse: collapse;
@@ -306,7 +311,7 @@ table {
 
 th {
     background: #196282 !important;
-    color: white
+    color: white;
 }
 
 tr:hover {
@@ -340,11 +345,10 @@ td {
     float: left;
 }
 
-.alignright {
-    float: right;
-    padding-right: 30px;
-}
-
+/* .alignright {
+  float: right;
+  padding-right: 30px;
+} */
 
 section>#admin-bar,
 #login-bar,
@@ -357,8 +361,6 @@ section>#admin-bar,
     margin: 0 auto;
 }
 
-
-
 footer {
     padding: 20px 0px 20px 0px;
     color: #ffffff;
@@ -366,7 +368,6 @@ footer {
     text-align: center;
     margin: 0 auto !important;
 }
-
 
 /* modal 2 */
 
@@ -381,10 +382,9 @@ footer {
     bottom: 0;
     left: 0;
     text-align: left;
-    background: rgba(0, 0, 0, .9);
-    transition: opacity .25s ease;
+    background: rgba(0, 0, 0, 0.9);
+    transition: opacity 0.25s ease;
 }
-
 
 .modal-state {
     display: none;
@@ -400,7 +400,7 @@ footer {
 }
 
 .modal__inner {
-    transition: top .25s ease;
+    transition: top 0.25s ease;
     position: absolute;
     top: -20%;
     right: 0;
@@ -417,7 +417,7 @@ footer {
 }
 
 .modal__inner .detail {
-    height: 50%
+    height: 50%;
 }
 
 .modal__close {
@@ -431,7 +431,7 @@ footer {
 
 .modal__close:after,
 .modal__close:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 2px;
     height: 1.5em;
@@ -453,19 +453,28 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-
     .modal__inner {
-        width: 90%;
-        height: 90%;
+        width: 100%;
+        height: 100%;
         box-sizing: border-box;
     }
 }
 
+#Accountheader {
+    background-color: #f4f4f4;
+    color: #196282;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 25px
+}
+
 #accountdetails {
-    background-color: #196282;
-    color: #f4f4f4;
+    /* background-color: #ffff; */
+    width: 100%;
+    color: #000;
     padding: 10px;
-    font-weight: bold
+    font-weight: bold;
+    font-size: 15px
 }
 
 /*pagination*/
@@ -476,7 +485,7 @@ footer {
 #paginationalign {
     margin-right: auto;
     margin-left: auto;
-    text-align: center
+    text-align: center;
 }
 
 .pagination a {
@@ -502,15 +511,12 @@ footer {
 #accountcreation {
     max-width: 50%;
     margin: auto auto;
-    background: #fff;
-    padding: 50px;
-    color: #196282;
+    color: #f4f4f4;
     text-align: center;
 }
 
-
 .button:hover {
-    background: #06D85F;
+    background: #06d85f;
 }
 
 .overlay {
@@ -533,7 +539,7 @@ footer {
 .popup {
     margin: 300px auto;
     padding: 20px;
-    background: #fff;
+    background: #196282;
     border-radius: 5px;
     width: 30%;
     position: relative;
@@ -541,6 +547,7 @@ footer {
 }
 
 .popup h2 {
+    color: #f4f4f4 !important;
     margin-top: 0;
     color: #333;
     font-family: Tahoma, Arial, sans-serif;
@@ -558,7 +565,7 @@ footer {
 }
 
 .popup .close:hover {
-    color: #06D85F;
+    color: #06d85f;
 }
 
 .popup .content {
@@ -577,5 +584,5 @@ footer {
 }
 
 #delete {
-    padding: 20px
+    padding: 20px;
 }

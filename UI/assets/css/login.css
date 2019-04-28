@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Sunflower:300');
+
 * {
     font-family: 'Sunflower', sans-serif;
     margin: 0;
 }
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="file"],
-select, option{
+select,
+option {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -16,6 +19,7 @@ select, option{
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 input[type="submit"] {
     width: 100%;
     background-color: #196282;
@@ -27,6 +31,7 @@ input[type="submit"] {
     border-radius: 4px;
     cursor: pointer;
 }
+
 input[type="submit"]:hover {
     background-color: #225f79;
 }
@@ -39,11 +44,11 @@ input[type="submit"]:hover {
     padding: 14px;
     border-radius: 10px;
     margin-top: 20px
-    
 }
-#login h2{
+
+#login h2 {
     text-align: center;
-    margin:auto;
+    margin: auto;
     font-size: 30px;
     padding: 14px;
     margin-top: 30px
@@ -52,25 +57,28 @@ input[type="submit"]:hover {
 #credit {
     margin-bottom: 100px;
 }
-#credit h2{
+
+#credit h2 {
     text-align: center;
-    margin:auto;
+    margin: auto;
     font-size: 30px;
     padding: 14px;
     margin-top: 25px;
     margin-bottom: -20px;
 }
+
 #linkup {
     text-decoration: none;
     color: #196282;
-    padding-right:16px;
+    padding-right: 16px;
 }
 
 #linkuppass {
     text-decoration: none;
     color: #196282;
 }
-.labeltitle{
+
+.labeltitle {
     color: #196282;
     font-weight: bold;
     display: block;

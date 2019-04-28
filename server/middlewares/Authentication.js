@@ -1,11 +1,11 @@
-import DummyHelper from '../utilities/dummyHelper';
+import Helper from '../utilities/helper';
 
 /**
  * @class DummyAuthentication
  * @description To verify user
- * @exports DummyAuthentication
+ * @exports Authorization
  */
-class DummyAuthentication {
+class Authorization {
   /**
    * @param  {object} req - The user request object
    * @param  {object} res - The user res response object
@@ -15,13 +15,14 @@ class DummyAuthentication {
   static verifyUser(req, res, next) {
     try {
       const token = req.headers.authorization.split(' ')[1];
-      const decoded = DummyHelper.verifyToken(token);
+      const decoded = Helper.verifyToken(token);
       req.userData = decoded;
+
       return next();
     } catch (error) {
-      return res.status(401).json({
+      return res.status(403).json({
         status: res.statusCode,
-        error: 'Unauthorized user, bank account cant be created',
+        error: 'user not found, please register to perform this action',
       });
     }
   }
@@ -36,10 +37,10 @@ class DummyAuthentication {
   static verifyStaff(req, res, next) {
     try {
       const token = req.headers.authorization.split(' ')[1];
-      const decoded = DummyHelper.verifyToken(token);
+      const decoded = Helper.verifyToken(token);
       req.userData = decoded;
-
-      if (req.userData.payload.type !== 'staff') {
+      console.log(decoded);
+      if (req.userData.type !== 'staff') {
         return res.status(403).send({
           status: res.statusCode,
           error: 'You are not authorized to perform this action',
@@ -64,10 +65,10 @@ class DummyAuthentication {
   static verifyAdmin(req, res, next) {
     try {
       const token = req.headers.authorization.split(' ')[1];
-      const decoded = DummyHelper.verifyToken(token);
+      const decoded = Helper.verifyToken(token);
       req.userData = decoded;
 
-      if (req.userData.payload.isAdmin === false) {
+      if (req.userData.isAdmin === false) {
         return res.status(403).send({
           status: res.statusCode,
           error: 'You are not authorized to perform this action',
@@ -84,4 +85,4 @@ class DummyAuthentication {
   }
 }
 
-export default DummyAuthentication;
+export default Authorization;

@@ -1,11 +1,11 @@
 import Joi from 'joi';
 
-const firstName = Joi.string().trim().min(2).regex(/^[A-Za-z]*$/)
-  .error(() => 'enter a valid name and name must not be less than 2')
+const firstName = Joi.string().trim(true).min(3).regex(/^[A-Za-z]*$/)
+  .error(() => 'enter a valid firstName and name must not be less than 3 character')
   .min(1)
   .required();
-const lastName = Joi.string().trim().min(2).regex(/^[A-Za-z]*$/)
-  .error(() => 'enter a valid name and name must not be less than 2')
+const lastName = Joi.string().trim().min(3).regex(/^[A-Za-z]*$/)
+  .error(() => 'enter a valid Lastname and name must not be less than 3 character')
   .min(1)
   .required();
 const email = Joi.string().email().trim().min(8)
@@ -18,14 +18,13 @@ const phoneNumber = Joi.number().integer().min(11)
   .required();
 const type = Joi.string().trim()
   .min(1)
+  .valid('client', 'staff')
   .required();
-const balance = Joi.number().integer()
-  .min(1)
-  .required();
+
 const isAdmin = Joi.boolean();
 
 
-const userdummySchema = {
+const userSignupSchema = {
   firstName,
   lastName,
   email,
@@ -35,15 +34,13 @@ const userdummySchema = {
   isAdmin,
 };
 
-const accountdummySchema = {
-  firstName,
-  lastName,
+const userSigninSchema = {
   email,
-  type,
-  balance,
+  password,
 };
 
+
 export default {
-  userdummySchema,
-  accountdummySchema,
+  userSignupSchema,
+  userSigninSchema,
 };

@@ -14,32 +14,28 @@ CREATE TABLE users
  
 -- CREATE ACCOUNT TABLE
 
-CREATE TABLE accounts
-(
-    id SERIAL PRIMARY KEY,
+CREATE TABLE accounts(
+    
+   id SERIAL PRIMARY KEY,
     accountNumber VARCHAR (500) UNIQUE NOT NULL,
     createdon VARCHAR (500) NOT NULL,
-    owner_id INT NOT NULL,
-    FOREIGN KEY (owner_id) REFERENCES users (id),
-    type VARCHAR (500) NOT NULL,
-    status VARCHAR (500) NOT NULL,
+    owner INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    ownerEmail VARCHAR (355) NOT NULL REFERENCES users(email) ON DELETE CASCADE,
+    type VARCHAR (20) NOT NULL DEFAULT 'savings',
+    status VARCHAR (10) NOT NULL DEFAULT 'active',
     balance VARCHAR (500) NOT NULL
     
 );
 
 -- CREATE Transaction TABLE
 
-CREATE TABLE transactions
-(
-    id SERIAL PRIMARY KEY,
-    createdon VARCHAR (500) NOT NULL,
-    type VARCHAR (500) NOT NULL,
-    accountNumber VARCHAR (500) NOT NULL,
-    FOREIGN KEY (accountNumber) REFERENCES accounts (accountNumber),
-    cashier_id INT NOT NULL,
-    FOREIGN KEY (cashier_id) REFERENCES users (id),
-    amount VARCHAR (500) NOT NULL,
-    oldBalance VARCHAR (500) NOT NULL,
-    newBAlance VARCHAR  (500) NOT NULL 
-
+CREATE TABLE transactions(
+ id serial PRIMARY KEY,
+ type VARCHAR (10) NOT NULL ,
+ accountNumber VARCHAR (10) NOT NULL REFERENCES accounts(accountNumber) ON DELETE CASCADE,
+ cashier INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+ amount NUMERIC (20),
+ oldBalance NUMERIC (20),
+ newBalance NUMERIC (20),
+ createdon VARCHAR (500) NOT NULL
 );

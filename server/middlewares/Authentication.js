@@ -20,9 +20,9 @@ class Authorization {
 
       return next();
     } catch (error) {
-      return res.status(401).json({
+      return res.status(403).json({
         status: res.statusCode,
-        error: 'Unauthorized user, bank account cant be created',
+        error: 'user not found, please register to perform this action',
       });
     }
   }
@@ -39,7 +39,7 @@ class Authorization {
       const token = req.headers.authorization.split(' ')[1];
       const decoded = Helper.verifyToken(token);
       req.userData = decoded;
-      console.log(decoded)
+      console.log(decoded);
       if (req.userData.type !== 'staff') {
         return res.status(403).send({
           status: res.statusCode,

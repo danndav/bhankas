@@ -7,6 +7,8 @@ chai.use(chaiHttp);
 chai.should();
 
 let userToken = '';
+let clientToken = ''
+
 
 before(() => {
   const email = 'tester@gmail.com';
@@ -14,7 +16,6 @@ before(() => {
     console.log(res);
   }).catch(() => {});
 });
-
 
 
 before(() => {
@@ -28,6 +29,23 @@ before(() => {
       })
       .end((err, res) => {
         userToken = res.body.data.token;
+        res.body.should.have.property('status').to.equals(200);
+        res.body.should.have.property('data').to.be.an('object');
+        done();
+      });
+  });
+
+
+  it('it should login user', (done) => {
+    chai
+      .request(server)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: 'dahnielisreajl@gmail.com',
+        password: 'danisreal',
+      })
+      .end((err, res) => {
+        clientToken = res.body.data.token;
         res.body.should.have.property('status').to.equals(200);
         res.body.should.have.property('data').to.be.an('object');
         done();
@@ -50,6 +68,36 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
             .property('message')
             .to.equals('Successfully fetched all users');
           res.should.have.property('status').to.equals(200);
+          // res.body.should.have.property('data').to.be.an('object');
+          done();
+        });
+    });
+
+    it('it should not GET all users with unathenticated', (done) => {
+      chai
+        .request(server)
+        .get('/api/v1/users/')
+        .set('authorization', `Bearer ${clientToken}`)
+        .end((err, res) => {
+          res.body.should.have
+            .property('error')
+            .to.equals('You are not authorized to perform this action');
+          res.should.have.property('status').to.equals(403);
+          // res.body.should.have.property('data').to.be.an('object');
+          done();
+        });
+    });
+
+    it('it should not GET all users with unathenticated', (done) => {
+      chai
+        .request(server)
+        .get('/api/v1/users/')
+        .set('authorization', `Bearer ${345676}`)
+        .end((err, res) => {
+          res.body.should.have
+            .property('error')
+            .to.equals('Authentication Failed');
+          res.should.have.property('status').to.equals(401);
           // res.body.should.have.property('data').to.be.an('object');
           done();
         });
@@ -79,12 +127,73 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
         });
     });
 
+    it('it should not signup empty user ', (done) => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signup')
+        .send({})
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.have
+            .property('message')
+            .to.equals('Please fill all fields');
+          res.body.should.have.property('status').to.equals(400);
+
+          done();
+        });
+    });
+
+    it('it should not signup empty user ', (done) => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signup')
+        .send({
+          email: 'tester@gmail.com',
+          firstName: 'hel//lo',
+          lastName: 'Abass',
+          phoneNumber: '08023461217',
+          password: 'tolaniabass',
+          type: 'client',
+          isAdmin: false,
+        })
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.have;
+          res.body.should.have.property('status').to.equals(400);
+
+          done();
+        });
+    });
+
+
+    it('it should not signup empty user ', (done) => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signup')
+        .send({
+          email: 'tester@gmail.com',
+          firstName: 'hello',
+          lastName: 'Abas\\s',
+          phoneNumber: '08023461217',
+          password: 'tolaniabass',
+          type: 'client',
+          isAdmin: false,
+        })
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.have;
+          res.body.should.have.property('status').to.equals(400);
+
+          done();
+        });
+    });
+
     it('it should not signup user that exist', (done) => {
       chai
         .request(server)
         .post('/api/v1/auth/signup')
         .send({
-          email: "aworenidapo@gmail.com",
+          email: 'aworenidapo@gmail.com',
           firstName: 'Imodoye',
           lastName: 'David',
           phoneNumber: '08023461217',
@@ -97,7 +206,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
           res.body.should.have.property('status').to.equals(400);
           res.body.should.have
             .property('message')
-            .to.equals('User with this email aworenidapo@gmail.com exists already', );
+            .to.equals('User with this email exists already');
 
           done();
         });
@@ -117,7 +226,7 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
 
           done();
         });
-    })
+    });
   });
 
   describe('/POST REQUEST', () => {
@@ -142,6 +251,41 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
     });
 
 
+    it('it should not  signin user ', (done) => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signin')
+        .send({})
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.have.property('status').to.equals(400);
+          res.body.should.have
+            .property('message')
+            .to.equals('Please fill all fields');
+
+          done();
+        });
+    });
+
+
+    it('it should not  signin user with wrong input', (done) => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signin')
+        .send({
+          email: 'tolaniabassgmail.com',
+          password: 'tolaniabass',
+        })
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.have.property('status').to.equals(400);
+
+
+          done();
+        });
+    });
+
+
     it('it should check for unregistered email and wrong password ', (done) => {
       chai
         .request(server)
@@ -158,7 +302,24 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
           done();
         });
     });
+  });
 
-
+  describe('/GET REQUEST', () => {
+    it('it should GET all accounts by email', (done) => {
+      const email = 'aworenidapo@gmail.com';
+      chai
+        .request(server)
+        .get(`/api/v1/users/${email}`)
+        .set('authorization', `Bearer ${userToken}`)
+        .end((err, res) => {
+          res.body.should.have
+            .property('message')
+            .to.equals('All Accounts Fetched Successfully');
+          res.should.have.property('status').to.equals(200);
+          // res.should.have.property('data').to.equals('object');
+          res.body.should.have.property('data').to.be.an('Array');
+          done();
+        });
+    });
   });
 });

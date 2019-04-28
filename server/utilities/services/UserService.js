@@ -49,7 +49,6 @@ class UserService {
             firstName: res[0].firstname,
             lastName: res[0].lastname,
             email: res[0].email,
-            password: res[0].password,
             type: res[0].type,
             isAdmin: res[0].isadmin
           };
@@ -118,6 +117,28 @@ class UserService {
         .catch(err => reject(err));
     });
   }
+
+
+  /**
+   * update account status
+   * @staticmethod
+   * @param  {string} transactionId - Request object
+   * @param  {string} body - Request object
+   * @param  {string} user_id - Request object
+   * @return {string} res
+   */
+  static AccountByEmail(useremail) {
+    return new Promise((resolve, reject) => {
+      queryProvider
+        .findAccountByEmail(useremail)
+        .then((res) => {
+
+          resolve(res);
+        })
+        .catch(err => reject(err));
+    });
+  }
+
 
 }
 

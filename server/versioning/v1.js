@@ -1,4 +1,6 @@
-import { Router } from 'express';
+import {
+  Router,
+} from 'express';
 import apiRoutes from '../routes/index';
 
 const api = Router();
@@ -21,7 +23,12 @@ api.use((req, res, next) => {
   next();
 });
 
-// No routes matched? 404.
-api.use((req, res) => res.status(404).send('Sorry that route/method doesnt exist'));
+// // No routes matched? 404.
 
+
+api.use((req, res) => res.status(404).json({
+  status: 404,
+  message: 'Sorry that route/method doesnt exist',
+
+}));
 export default api;

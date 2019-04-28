@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import config from '../config/index'
+import config from '../config/index';
 
 /**
  * @exports
@@ -7,7 +7,6 @@ import config from '../config/index'
  */
 
 class helperClass {
-
   /**
    * Userhelper Class
    * @staticmethod VerifyToken

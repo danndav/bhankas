@@ -1,6 +1,6 @@
 import Joi from 'joi';
 
-const balance = Joi.number().integer().min(11)
+const balance = Joi.number().integer().positive()
   .required();
 const amount = Joi.number().integer().positive()
   .required();

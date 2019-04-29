@@ -57,6 +57,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
-    "pg": "^7.10.0"
+    "pg": "^7.10.0",
+    "swagger-node-express": "^2.1.3"
   }
 }

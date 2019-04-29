@@ -29,13 +29,15 @@ CREATE TABLE accounts(
 
 -- CREATE Transaction TABLE
 
+
+
 CREATE TABLE transactions(
  id serial PRIMARY KEY,
- type VARCHAR (10) NOT NULL ,
- accountNumber VARCHAR (10) NOT NULL REFERENCES accounts(accountNumber) ON DELETE CASCADE,
+ type VARCHAR (500) NOT NULL ,
+ accountNumber VARCHAR (500) NOT NULL REFERENCES accounts(accountNumber) ON DELETE CASCADE,
  cashier INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
- amount NUMERIC (20),
- oldBalance NUMERIC (20),
- newBalance NUMERIC (20),
+ amount NUMERIC (500),
+ oldBalance NUMERIC (500),
+ newBalance NUMERIC (500),
  createdon VARCHAR (500) NOT NULL
 );

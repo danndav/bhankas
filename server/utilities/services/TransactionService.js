@@ -33,10 +33,11 @@ class TransactionService {
                             const data = {
                                 transactionId: res.id,
                                 accountnumber: res.accountnumber,
-                                amount: res.amount,
                                 cashier: res.cashier,
                                 transactionType: res.type,
-                                accountBalance: res.newbalance,
+                                amount: res.amount,
+                                oldBalance: oldbalance,
+                                newBalance: res.newbalance,
                             }
                             resolve(data)
 
@@ -71,9 +72,10 @@ class TransactionService {
                     const type = 'Debit'
 
                     if (Number(amount) > Number(balance)) {
-                        return res.status(400).json({
-                            message: 'insufficient balance ',
-                        });
+                        const obj = {};
+                        obj.status = 400;
+                        obj.responseMessage = 'Insufficient fund';
+                        reject(obj);
                     }
 
                     const oldbalance = balance;
@@ -89,21 +91,30 @@ class TransactionService {
                             const data = {
                                 transactionId: res.id,
                                 accountnumber: res.accountnumber,
-                                amount: res.amount,
                                 cashier: res.cashier,
                                 transactionType: res.type,
-                                accountBalance: res.newbalance,
+                                amount: res.amount,
+                                oldBalance: oldbalance,
+                                newBalance: res.newbalance,
                             }
                             resolve(data)
                         })
                         .catch((err) => {
-                            reject(err);
+                            const obj = {};
+                            obj.responseMessage = 'Transaction not sucessful';
+                            reject(obj);
 
                         });
                 })
                 .catch((err) => {
-                    reject(err);
+                    console.log(err)
+                    const obj = {};
+                    obj.status = 400
+                    obj.responseMessage = 'Account number not find';
+                    reject(obj);
+
                 });
+
         });
     }
 

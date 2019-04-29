@@ -56,16 +56,12 @@ class TransactionController {
 
     TransactionService
       .DebitTransaction(userId, accountNumber, amount)
-
-
       .then(data => res.status(200).json({
         status: 200,
         data,
         message: 'Debit Transaction successful',
       }))
-      .catch(() => res.status(404).json({
-        error: 'This account does not exist',
-      }));
+      .catch((err) => res.status(404).json(err));
   }
 }
 

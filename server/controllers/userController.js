@@ -6,12 +6,12 @@ import UserService from '../utilities/services/UserService';
  */
 class UserController {
   /**
-     * Creates a new user
-     * @staticmethod
-     * @param  {object} req - user object
-     * @param {object} res - Response object
-     * @return {json} res.json
-     */
+   * Creates a new user
+   * @staticmethod
+   * @param  {object} req - user object
+   * @param {object} res - Response object
+   * @return {json} res.json
+   */
   static createUser(req, res) {
     UserService
       .saveUser(req.body)
@@ -36,12 +36,12 @@ class UserController {
 
 
   /**
-     * Creates a new user
-     * @staticmethod
-     * @param  {object} req - user object
-     * @param {object} res - Response object
-     * @return {json} res.json
-     */
+   * Creates a new user
+   * @staticmethod
+   * @param  {object} req - user object
+   * @param {object} res - Response object
+   * @return {json} res.json
+   */
   static loginUser(req, res) {
     const {
       email,
@@ -62,12 +62,12 @@ class UserController {
 
 
   /**
-     * View all users
-     * @staticmethod
-     * @param  {object} req - user objectexport default UserController
-     * @param {object} res - Response object
-     * @return {json} res.json
-     */
+   * View all users
+   * @staticmethod
+   * @param  {object} req - user objectexport default UserController
+   * @param {object} res - Response object
+   * @return {json} res.json
+   */
   static viewAllUsers(req, res) {
     UserService
       .viewAllCreated()
@@ -92,12 +92,12 @@ class UserController {
   }
 
   /**
-     * fetch transaction details
-     * @staticmethod
-     * @param  {object} req - user object
-     * @param {object} res - Response object
-     * @return {json} res.json
-     */
+   * fetch transaction details
+   * @staticmethod
+   * @param  {object} req - user object
+   * @param {object} res - Response object
+   * @return {json} res.json
+   */
   static fetchAllAccountByEmail(req, res) {
     const useremail = req.params.email;
 
@@ -109,12 +109,12 @@ class UserController {
         status: 200,
         message: 'All Accounts Fetched Successfully',
         data: response.rows,
-      }));
-    // .catch(err => res.status(400).json({
-    //     status: 400,
-    //     error: 'Accounts could not be fetched',
+      }))
+      .catch(err => res.status(400).json({
+        status: 400,
+        error: 'Accounts could not be fetched',
 
-    // }));
+      }));
   }
 }
 

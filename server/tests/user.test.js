@@ -13,7 +13,7 @@ let clientToken = ''
 before(() => {
   const email = 'tester@gmail.com';
   return queryProivider.deleteUserByEmailQuery(email).then((res) => {
-    console.log(res);
+
   }).catch(() => {});
 });
 
@@ -24,8 +24,8 @@ before(() => {
       .request(server)
       .post('/api/v1/auth/signin')
       .send({
-        email: 'aworenidapo@gmail.com',
-        password: 'dapoaworeni',
+        email: 'dahni9elisrealud@gmail.com',
+        password: 'danisreal',
       })
       .end((err, res) => {
         userToken = res.body.data.token;
@@ -309,15 +309,15 @@ describe('UNIT TESTS FOR DUMMY USER CONTROLLERS', () => {
       const email = 'aworenidapo@gmail.com';
       chai
         .request(server)
-        .get(`/api/v1/users/${email}`)
+        .get(`/api/v1/user/${email}/accounts`)
         .set('authorization', `Bearer ${userToken}`)
         .end((err, res) => {
           res.body.should.have
             .property('message')
             .to.equals('All Accounts Fetched Successfully');
           res.should.have.property('status').to.equals(200);
-          // res.should.have.property('data').to.equals('object');
           res.body.should.have.property('data').to.be.an('Array');
+
           done();
         });
     });

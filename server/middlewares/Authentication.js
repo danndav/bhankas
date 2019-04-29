@@ -20,7 +20,7 @@ class Authorization {
 
       return next();
     } catch (error) {
-      return res.status(403).json({
+      return res.status(401).json({
         status: res.statusCode,
         error: 'user not found, please register to perform this action',
       });
@@ -68,7 +68,7 @@ class Authorization {
       const decoded = Helper.verifyToken(token);
       req.userData = decoded;
 
-      if (req.userData.isAdmin === false) {
+      if (req.userData.isadmin === false) {
         return res.status(403).send({
           status: res.statusCode,
           error: 'You are not authorized to perform this action',

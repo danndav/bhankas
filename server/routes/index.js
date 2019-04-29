@@ -55,21 +55,21 @@ const router = Router();
 // User Routes
 router.post('/auth/signup', userSignupValidate, createUser);
 router.post('/auth/signin/', userLoginValidate, loginUser);
-router.get('/users/', verifyStaff, verifyAdmin, viewAllUsers);
-router.get('/users/:email', verifyAdmin, verifyStaff, fetchAllAccountByEmail);
+router.get('/users/', verifyStaff || verifyAdmin, viewAllUsers);
+router.get('/user/:email/accounts', verifyAdmin || verifyStaff, fetchAllAccountByEmail);
 
 // Accounts Routes
-router.get('/accounts/:accountNumber/', verifyStaff, verifyAdmin, viewAccountdatails);
-router.get('/accounts/', verifyAdmin, verifyStaff, viewAllAccounts);
-router.post('/accounts/', verifyUser, verifyStaff, verifyAdmin, createAccountValid, createAccount);
-router.patch('/accounts/:accountNumber', verifyAdmin, updateaccountStatus);
-router.delete('/accounts/:accountNumber', verifyAdmin, DeleteAccountNumber);
+router.get('/accounts/:accountNumber/', verifyStaff || verifyAdmin, viewAccountdatails);
+router.get('/accounts/', verifyAdmin || verifyStaff, viewAllAccounts);
+router.post('/accounts/', verifyUser, createAccountValid, createAccount);
+router.patch('/accounts/:accountNumber', verifyStaff || verifyAdmin, updateaccountStatus);
+router.delete('/accounts/:accountNumber', verifyStaff || verifyAdmin, DeleteAccountNumber);
 
 // Transactions Routes
 router.post('/transactions/:accountNumber([0-9]+)/credit', verifyStaff, createTransactValid, CreditAccount);
 router.post('/transactions/:accountNumber([0-9]+)/debit', verifyStaff, createTransactValid, DebitAccount);
 router.get('/accounts/:accountNumber([0-9]+)/transactions', verifyUser, fetchTransactionsByAccount);
-router.get('/transactions/:id([0-9]+)', verifyAdmin, verifyStaff, fetchTransactionsByID);
+router.get('/transactions/:id([0-9]+)', verifyAdmin || verifyStaff, fetchTransactionsByID);
 
 // router.get('/accounts/', verifyUser, viewActiveStatus);
 export default router;

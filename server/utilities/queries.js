@@ -12,11 +12,11 @@ const err = {};
  */
 class queryProvider {
   /**
-     * Find user by email
-     * @staticmethod
-     * @param  {string} email - Request object
-     * @return {string} res
-     */
+   * Find user by email
+   * @staticmethod
+   * @param  {string} email - Request object
+   * @return {string} res
+   */
   static findUserByEmailQuery(email) {
     return new Promise((resolve, reject) => {
       const query = `SELECT * FROM users WHERE email = '${email}'`;
@@ -41,11 +41,11 @@ class queryProvider {
   }
 
   /**
-     * Find account fromdatabase
-     * @staticmethod
-     * @param  {string} email - Request object
-     * @return {string} res
-     */
+   * Find account fromdatabase
+   * @staticmethod
+   * @param  {string} email - Request object
+   * @return {string} res
+   */
   static findaccountQuery(accountnumber) {
     return new Promise((resolve, reject) => {
       const query = `SELECT * FROM accounts WHERE accountnumber = '${accountnumber}'`;
@@ -71,11 +71,11 @@ class queryProvider {
   }
 
   /**
-     * save new user
-     * @staticmethod
-     * @param  {string} body - Request object
-     * @return {string} res
-     */
+   * save new user
+   * @staticmethod
+   * @param  {string} body - Request object
+   * @return {string} res
+   */
   static saveUserQuery(body) {
     const {
       email,
@@ -122,11 +122,11 @@ class queryProvider {
 
 
   /**
-     * Find all user
-     * @staticmethod
-     * @param  {string} id - Request object
-     * @return {string} res
-     */
+   * Find all user
+   * @staticmethod
+   * @param  {string} id - Request object
+   * @return {string} res
+   */
   static findAllUsersQuery() {
     return new Promise((resolve, reject) => {
       const query = 'SELECT * FROM users';
@@ -152,11 +152,11 @@ class queryProvider {
 
 
   /**
-     * Find all user
-     * @staticmethod
-     * @param  {string} id - Request object
-     * @return {string} res
-     */
+   * Find all user
+   * @staticmethod
+   * @param  {string} id - Request object
+   * @return {string} res
+   */
   static findUserTransaction(accountnumber) {
     return new Promise((resolve, reject) => {
       const query = `SELECT * FROM transactions WHERE accountnumber = '${accountnumber}'`;
@@ -181,12 +181,12 @@ class queryProvider {
   }
 
   /**
-     * Save Account Query
-     * @staticmethod
-     * @param  {string} body - Request object
-     * @param  {string} userid - Request object
-     * @return {string} res
-     */
+   * Save Account Query
+   * @staticmethod
+   * @param  {string} body - Request object
+   * @param  {string} userid - Request object
+   * @return {string} res
+   */
   static saveAccountQuery(body, userid, useremail) {
     const {
       type,
@@ -231,11 +231,11 @@ class queryProvider {
 
 
   /**
-     * Findby by AccountID
-     * @staticmethod
-     * @param  {string} id
-     * @return {string} res
-     */
+   * Findby by AccountID
+   * @staticmethod
+   * @param  {string} id
+   * @return {string} res
+   */
   static findByAccountIdQuery(id) {
     return new Promise((resolve, reject) => {
       const query = `SELECT * FROM accounts WHERE id = '${id}'`;
@@ -259,12 +259,12 @@ class queryProvider {
 
 
   /**
-     * Update Account Status Query
-     * @staticmethod
-     * @param  {string} Accountid - Request object
-     * @param  {string} body - Request object
-     * @return {string} res
-     */
+   * Update Account Status Query
+   * @staticmethod
+   * @param  {string} Accountid - Request object
+   * @param  {string} body - Request object
+   * @return {string} res
+   */
   static updateAccountStatusQuery(accountnumber, body) {
     const {
       status,
@@ -290,11 +290,11 @@ class queryProvider {
   }
 
   /**
-     * Delete user by email
-     * @staticmethod
-     * @param  {string} email - Request object
-     * @return {string} res
-     */
+   * Delete user by email
+   * @staticmethod
+   * @param  {string} email - Request object
+   * @return {string} res
+   */
   static deleteUserByEmailQuery(email) {
     return new Promise((resolve, reject) => {
       const query = `DELETE FROM users WHERE email = '${email}'`;
@@ -317,11 +317,11 @@ class queryProvider {
 
 
   /**
-     * Delete user by account
-     * @staticmethod
-     * @param  {string} account - Request object
-     * @return {string} res
-     */
+   * Delete user by account
+   * @staticmethod
+   * @param  {string} account - Request object
+   * @return {string} res
+   */
   static deleteAccountQuery(accountnumber) {
     return new Promise((resolve, reject) => {
       const query = `DELETE FROM accounts WHERE accountnumber = '${accountnumber}'`;
@@ -344,12 +344,12 @@ class queryProvider {
 
 
   /**
-     * Save Account Query
-     * @staticmethod
-     * @param  {string} body - Request object
-     * @param  {string} userid - Request object
-     * @return {string} res
-     */
+   * Save Account Query
+   * @staticmethod
+   * @param  {string} body - Request object
+   * @param  {string} userid - Request object
+   * @return {string} res
+   */
   static creditTransactionQuery(newbalance, oldbalance, userid, accountnumber, amounts, type) {
     const amount = parseFloat(amounts, 10).toFixed(2);
     const today = new Date();
@@ -393,11 +393,11 @@ class queryProvider {
 
 
   /**
-     * Findby by account transaction
-     * @staticmethod
-     * @param  {string} id
-     * @return {string} res
-     */
+   * Findby by account transaction
+   * @staticmethod
+   * @param  {string} id
+   * @return {string} res
+   */
   static findTransactionByAccount(accountname) {
     return new Promise((resolve, reject) => {
       const query = `SELECT * FROM transactions WHERE accountnumber = '${accountname}'`;
@@ -421,11 +421,11 @@ class queryProvider {
 
 
   /**
-     * Findby by account transaction
-     * @staticmethod
-     * @param  {string} id
-     * @return {string} res
-     */
+   * Findby by account transaction
+   * @staticmethod
+   * @param  {string} id
+   * @return {string} res
+   */
   static findTransactionById(transactionid) {
     return new Promise((resolve, reject) => {
       const query = `SELECT * FROM transactions WHERE id = '${transactionid}'`;
@@ -449,11 +449,11 @@ class queryProvider {
 
 
   /**
-     * Findby by e=account by email
-     * @staticmethod
-     * @param  {string} id
-     * @return {string} res
-     */
+   * Findby by e=account by email
+   * @staticmethod
+   * @param  {string} id
+   * @return {string} res
+   */
   static findAccountByEmail(useremail) {
     return new Promise((resolve, reject) => {
       const query = `SELECT * FROM accounts WHERE owneremail = '${useremail}'`;
@@ -476,11 +476,11 @@ class queryProvider {
   }
 
   /**
-     * Findby by account transaction
-     * @staticmethod
-     * @param  {string} id
-     * @return {string} res
-     */
+   * Findby by account transaction
+   * @staticmethod
+   * @param  {string} id
+   * @return {string} res
+   */
   static findAccountByNumber(accountnumber) {
     return new Promise((resolve, reject) => {
       const query = `SELECT * FROM accounts WHERE accountnumber = '${accountnumber}'`;
@@ -504,11 +504,11 @@ class queryProvider {
 
 
   /**
-     * Find all user
-     * @staticmethod
-     * @param  {string} id - Request object
-     * @return {string} res
-     */
+   * Find all user
+   * @staticmethod
+   * @param  {string} id - Request object
+   * @return {string} res
+   */
   static findAllAccountsQuery() {
     return new Promise((resolve, reject) => {
       const query = 'SELECT * FROM accounts';
@@ -534,11 +534,11 @@ class queryProvider {
 
 
   /**
-     * Findby by account transaction
-     * @staticmethod
-     * @param  {string} id
-     * @return {string} res
-     */
+   * Findby by account transaction
+   * @staticmethod
+   * @param  {string} id
+   * @return {string} res
+   */
   static findAccountByStatus(currentstatus) {
     return new Promise((resolve, reject) => {
       const query = `SELECT * FROM accounts WHERE status = '${currentstatus}'`;

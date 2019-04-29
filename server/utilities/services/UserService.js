@@ -46,10 +46,10 @@ class UserService {
           const data = {
             token,
             id: res[0].id,
-            firstName: res[0].firstname,
-            lastName: res[0].lastname,
-            email: res[0].email,
-            type: res[0].type,
+            firstName: res[0].firstname.trim(),
+            lastName: res[0].lastname.trim(),
+            email: res[0].email.trim(),
+            type: res[0].type.trim(),
             isAdmin: res[0].isadmin
           };
 

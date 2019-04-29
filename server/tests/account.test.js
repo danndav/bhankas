@@ -16,8 +16,8 @@ before(() => {
             .request(server)
             .post('/api/v1/auth/signin')
             .send({
-                email: 'aworenidapo@gmail.com',
-                password: 'dapoaworeni',
+                email: 'dahni9elisrealud@gmail.com',
+                password: 'danisreal',
             })
             .end((err, res) => {
                 userToken = res.body.data.token;
@@ -125,7 +125,7 @@ describe('UNIT TESTS FOR Accounts', () => {
          */
         describe('/GET REQUEST', () => {
             it('it should GET all accounts details', (done) => {
-                const accounNumber = 5366652541;
+                const accounNumber = 3449390654;
                 chai
                     .request(server)
                     .get(`/api/v1/accounts/${accounNumber}`)
@@ -165,7 +165,7 @@ describe('UNIT TESTS FOR Accounts', () => {
          */
         describe('/GET REQUEST', () => {
             it('it should GET all Transactions details', (done) => {
-                const accounNumber = 1200777775;
+                const accounNumber = 3449390654;
                 chai
                     .request(server)
                     .get(`/api/v1/accounts/${accounNumber}/transactions`)
@@ -206,7 +206,7 @@ describe('UNIT TESTS FOR Accounts', () => {
          */
         describe('/GET REQUEST', () => {
             it('it should GET all Transaction By id', (done) => {
-                const userid = 3;
+                const userid = 207;
                 chai
                     .request(server)
                     .get(`/api/v1/transactions/${userid}`)
@@ -223,7 +223,7 @@ describe('UNIT TESTS FOR Accounts', () => {
 
             it('it should not GET all accounts details', (done) => {
                 chai;
-                const userid = 300;
+                const userid = 3;
                 chai
                     .request(server)
                     .get(`/api/v1/transactions/${userid}`)
@@ -253,7 +253,7 @@ describe('UNIT TESTS FOR Accounts', () => {
                     })
                     .end((err, res) => {
                         user = res.body.data.accountNumber;
-                        console.log('must new account create', res.body.data.accountNumber);
+
                         res.should.have.status(201);
                         res.body.should.have.property('status').to.equals(201);
                         res.body.should.have.property('data').to.be.an('object');
@@ -293,8 +293,8 @@ describe('UNIT TESTS FOR Accounts', () => {
                         balance: 1290,
                     })
                     .end((err, res) => {
-                        res.should.have.status(403);
-                        res.body.should.have.property('status').to.equals(403);
+                        res.should.have.status(401);
+                        res.body.should.have.property('status').to.equals(401);
                         res.body.should.have
                             .property('error')
                             .to.equals('user not found, please register to perform this action');
@@ -347,7 +347,7 @@ describe('UNIT TESTS FOR Accounts', () => {
 
     describe('/PATCH REQUEST', () => {
         it('it should patch account ', (done) => {
-            const accounNumber = 1200777775;
+            const accounNumber = 3449390654;
             chai
                 .request(server)
                 .patch(`/api/v1/accounts/${accounNumber}`)
